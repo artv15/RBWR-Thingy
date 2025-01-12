@@ -117,10 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="warningPrecision.Text" xml:space="preserve">
-    <value>We are assuming that the turbine is running at 7100 kPa. If it is not, then it's most likely that the actual output won't match. Additionally, MWe output varies from reactor type to reactor type, and may be different by about 10MWe.</value>
-  </data>
   <data name="labelPumpDeficit.Text" xml:space="preserve">
-    <value>Calculates, would be acceptable to run with a broken pump for some time. We assume that reactor level is at 4.5m, as to not cause unnesesary reactor overflow. Additionally, solo pump capacity should be the most broken pump max output.</value>
+    <value>Checks whether you could increase reactor water level to 4.5m and get one of the MCC pumps repaired. Keep in mind, steam flow will increase by about 10 kg/s, so I suggest increasing outflow by 10. On average, repairs take about 200 seconds to complete, but I recommend using the default value.</value>
   </data>
 </root>

@@ -40,32 +40,27 @@ namespace RBWR_Calculator
 
             double totalRequested = mwResult + plantUsageResult;
 
-            double apr = 0.07324 * totalRequested + 10.99890; // why is that not precise?
+            double apr = 0.07324 * totalRequested + 10.99890;
             double flow = 82.8 + (13.7 * apr) + (5.87 * Math.Pow(10, -3) * Math.Pow(apr, 2));
 
             outputAPR.BackColor = Color.GhostWhite;
             outputFWFlow.BackColor = Color.GhostWhite;
             List<string> notes = new List<string>();
-            if (flow > 1212.5)
-            {
-                outputFWFlow.BackColor = Color.DarkOrange;
-                notes.Add("Pump repairs may be impossible.");
-            }
-            else if (flow > 1187.5)
-            {
-                outputFWFlow.BackColor = Color.Orange;
-                notes.Add("Pump repairs may be unsafe, reactor level will drop below -3m.");
-            }
-            else if (flow > 990)
-            {
-                outputFWFlow.BackColor = Color.Yellow;
-                notes.Add("Pump repairs may possible, use 'Pump Deficit Run' to check.");
-            }
 
             string extraTextLoad = "";
-            if (apr > 108)
+            if (flow > 1000)
             {
-                extraTextLoad = "Danger, APR > 108%!";
+                extraTextLoad = "Above safe repair threshold.";
+            }
+
+            if (totalRequested > 1350)
+            {
+                extraTextLoad = "Danger, You will be getting full load rejected! Are you certain whatever you are doing is worth it?";
+                outputAPR.BackColor = Color.Red;
+            }
+            else if (apr > 108)
+            {
+                extraTextLoad = "Danger, APR > 108%! Are you certain whatever you are doing is worth it?";
                 outputAPR.BackColor = Color.Red;
             }
             else if (apr > 100)
@@ -84,7 +79,6 @@ namespace RBWR_Calculator
             {
                 if (i < notes.Count)
                 {
-                    // ReSharper disable once LocalizableElement
                     extraNote.Text += "\n";
                 }
 
@@ -97,6 +91,14 @@ namespace RBWR_Calculator
             }
 
             this.outputAPR.Text = $@"{apr:0.00}";
+            if (apr > 125)
+            {
+                this.outputAPR.Text = $@"reactor explodet";
+                this.outputFWFlow.Text = $@"0.00";
+                extraNote.Text = "reactor explodet";
+                return;
+            }
+
             this.outputFWFlow.Text = $@"{flow:0.00}";
             this.inputCRRVPOutflow.Text = $@"{flow:0.00}";
         }
