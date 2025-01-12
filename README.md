@@ -10,7 +10,7 @@ Pretty precise I would say, at least it worked for unit 1 when I was testing it 
 
 ## Credits
 [This guide](https://docs.google.com/document/d/1Irwh4lIR1y15hKauZ3XupzsZ79sPYgwSfMnnWt8aulc/edit) by Avalakaba (@kopa_tel_oflain) for MCC formula\
-[This website](https://nxrvi.github.io/rbwrmultitoolweb/) from which I shamelessly stole MWe to APR formula.
+[This website](https://nxrvi.github.io/rbwrmultitoolweb/) from which I ~~shamelessly stole~~ adapted MWe to APR formula.
 
 ## Downloads
 Check releases for precompiled app or build it yourself from source.\
