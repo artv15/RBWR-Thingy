@@ -40,7 +40,7 @@ namespace RBWR_Calculator
 
             double totalRequested = mwResult + plantUsageResult;
 
-            double apr = (totalRequested + 163) / 14.3;
+            double apr = 0.07324 * totalRequested + 10.99890; // why is that not precise?
             double flow = 82.8 + (13.7 * apr) + (5.87 * Math.Pow(10, -3) * Math.Pow(apr, 2));
 
             outputAPR.BackColor = Color.GhostWhite;
