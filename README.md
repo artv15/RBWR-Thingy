@@ -8,6 +8,7 @@ Actual value may be wrong if:
 - If you have a broken/disabled preheater
 - You have not updated plant usage
 - Not supplying reactor with enough feedwater (steam outflow seems to be higher if you supply it with less feedwater)
+
 Will also show an approximate feedwater flow, which should also be treated as a rough approximation (±30 kg/s).
 ## Pump repairs on high load
 Allows to calculate whether you can run without a pump without changing your load.\
