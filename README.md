@@ -2,8 +2,13 @@
 An unfinished calculator that does two things as of now
 
 ## MWe to APR conversion
-Can convert MWe demand and plant usage to a more or less approximate APR target (±3% give or take).\
-Will also show an approximate feedwater flow, which should also be treated as a rough approximation.
+Can convert MWe demand and plant usage to a more or less approximate APR target.\
+As far as I have tested, there is about 5 MWe difference, although note that I tested this only in unit 1, classic type.\
+Actual value may be wrong if:
+- If you have a broken/disabled preheater
+- You have not updated plant usage
+- Not supplying reactor with enough feedwater (steam outflow seems to be higher if you supply it with less feedwater)
+Will also show an approximate feedwater flow, which should also be treated as a rough approximation (±30 kg/s).
 ## Pump repairs on high load
 Allows to calculate whether you can run without a pump without changing your load.\
 Pretty precise I would say, at least it worked for unit 1 when I was testing it on a private server.
