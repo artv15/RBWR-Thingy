@@ -77,14 +77,9 @@ namespace RBWR_Calculator
                 extraText = "Above safe repair threshold.";
             }
 
-            if (totalRequested > 1350)
+            if (apr > 108)
             {
-                extraText = "Danger, You will be getting full load rejected! Are you certain whatever you are doing is worth it?";
-                outputAPR.BackColor = Color.Red;
-            }
-            else if (apr > 108)
-            {
-                extraText = "Danger, APR > 108%! Are you certain whatever you are doing is worth it?";
+                extraText = "APR > 108%. Are you certain whatever you are doing is worth it?";
                 outputAPR.BackColor = Color.Red;
             }
             else if (apr > 100)
