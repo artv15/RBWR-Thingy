@@ -1,6 +1,6 @@
 ﻿namespace RBWR_Calculator
 {
-    partial class Form1
+    partial class Form
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.formulaQuadratic = new System.Windows.Forms.RadioButton();
+            this.formulaLinear = new System.Windows.Forms.RadioButton();
+            this.formulaAuto = new System.Windows.Forms.RadioButton();
             this.extraNote = new System.Windows.Forms.Label();
             this.outputFWFlow = new System.Windows.Forms.TextBox();
             this.labelFWFlow = new System.Windows.Forms.Label();
@@ -77,6 +81,10 @@
             //
             // groupBox1
             //
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.formulaQuadratic);
+            this.groupBox1.Controls.Add(this.formulaLinear);
+            this.groupBox1.Controls.Add(this.formulaAuto);
             this.groupBox1.Controls.Add(this.extraNote);
             this.groupBox1.Controls.Add(this.outputFWFlow);
             this.groupBox1.Controls.Add(this.labelFWFlow);
@@ -94,6 +102,47 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "MWe to APR";
             //
+            // label2
+            //
+            this.label2.Location = new System.Drawing.Point(6, 180);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 23);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Formula:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //
+            // formulaQuadratic
+            //
+            this.formulaQuadratic.Location = new System.Drawing.Point(183, 179);
+            this.formulaQuadratic.Name = "formulaQuadratic";
+            this.formulaQuadratic.Size = new System.Drawing.Size(71, 24);
+            this.formulaQuadratic.TabIndex = 12;
+            this.formulaQuadratic.Text = "Quadratic";
+            this.formulaQuadratic.UseVisualStyleBackColor = true;
+            this.formulaQuadratic.CheckedChanged += new System.EventHandler(this.ForceRecalculationLoad);
+            //
+            // formulaLinear
+            //
+            this.formulaLinear.Location = new System.Drawing.Point(121, 179);
+            this.formulaLinear.Name = "formulaLinear";
+            this.formulaLinear.Size = new System.Drawing.Size(56, 24);
+            this.formulaLinear.TabIndex = 11;
+            this.formulaLinear.Text = "Linear";
+            this.formulaLinear.UseVisualStyleBackColor = true;
+            this.formulaLinear.CheckedChanged += new System.EventHandler(this.ForceRecalculationLoad);
+            //
+            // formulaAuto
+            //
+            this.formulaAuto.Checked = true;
+            this.formulaAuto.Location = new System.Drawing.Point(61, 179);
+            this.formulaAuto.Name = "formulaAuto";
+            this.formulaAuto.Size = new System.Drawing.Size(56, 24);
+            this.formulaAuto.TabIndex = 10;
+            this.formulaAuto.TabStop = true;
+            this.formulaAuto.Text = "Auto";
+            this.formulaAuto.UseVisualStyleBackColor = true;
+            this.formulaAuto.CheckedChanged += new System.EventHandler(this.ForceRecalculationLoad);
+            //
             // extraNote
             //
             this.extraNote.Location = new System.Drawing.Point(6, 199);
@@ -105,7 +154,7 @@
             //
             // outputFWFlow
             //
-            this.outputFWFlow.Location = new System.Drawing.Point(112, 161);
+            this.outputFWFlow.Location = new System.Drawing.Point(112, 155);
             this.outputFWFlow.Name = "outputFWFlow";
             this.outputFWFlow.ReadOnly = true;
             this.outputFWFlow.Size = new System.Drawing.Size(133, 20);
@@ -113,7 +162,7 @@
             //
             // labelFWFlow
             //
-            this.labelFWFlow.Location = new System.Drawing.Point(6, 164);
+            this.labelFWFlow.Location = new System.Drawing.Point(6, 158);
             this.labelFWFlow.Name = "labelFWFlow";
             this.labelFWFlow.Size = new System.Drawing.Size(100, 23);
             this.labelFWFlow.TabIndex = 7;
@@ -121,7 +170,7 @@
             //
             // label1
             //
-            this.label1.Location = new System.Drawing.Point(6, 138);
+            this.label1.Location = new System.Drawing.Point(6, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 6;
@@ -165,7 +214,7 @@
             //
             // outputAPR
             //
-            this.outputAPR.Location = new System.Drawing.Point(112, 138);
+            this.outputAPR.Location = new System.Drawing.Point(112, 129);
             this.outputAPR.Name = "outputAPR";
             this.outputAPR.ReadOnly = true;
             this.outputAPR.Size = new System.Drawing.Size(133, 20);
@@ -431,7 +480,7 @@
             this.labelCredit.TabIndex = 3;
             this.labelCredit.Text = "Created by Treeshold (artv1505). ~ Please announce RSTs or shutdowns before tripp" + "ing stuff. PA exists for this sole reason.";
             //
-            // Form1
+            // Form
             //
             this.ClientSize = new System.Drawing.Size(843, 291);
             this.Controls.Add(this.labelCredit);
@@ -439,7 +488,7 @@
             this.Controls.Add(this.groupColdRun);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form1";
+            this.Name = "Form";
             this.Text = "RBWR thingy";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -451,6 +500,11 @@
             this.repairsGroupMCC.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.RadioButton formulaAuto;
+        private System.Windows.Forms.RadioButton formulaLinear;
+        private System.Windows.Forms.RadioButton formulaQuadratic;
+        private System.Windows.Forms.Label label2;
 
         private System.Windows.Forms.Label labelCredit;
 

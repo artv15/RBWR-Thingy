@@ -8,9 +8,9 @@ namespace RBWR_Calculator
 {
     // Fun fact: this code sucks, but it works. It's a calculator for a fictional nuclear reactor anyway which I made because I was bored soloing unit 2.
 
-    public partial class Form1 : Form
+    public partial class Form : System.Windows.Forms.Form
     {
-        public Form1()
+        public Form()
         {
             InitializeComponent();
         }
@@ -39,39 +39,50 @@ namespace RBWR_Calculator
             }
 
             double totalRequested = mwResult + plantUsageResult;
+            double apr;
 
-            double apr = 0.07324 * totalRequested + 10.99890;
+            bool useQuadratic = formulaQuadratic.Checked || formulaAuto.Checked && totalRequested >= 301;
+            if (useQuadratic)
+            {
+                apr = -0.000002121531845 * Math.Pow(totalRequested, 2) + 0.07616 * totalRequested + 10.36918;
+            }
+            else
+            {
+                apr = 0.07342 * totalRequested + 10.99763;
+            }
+
             double flow = 82.8 + (13.7 * apr) + (5.87 * Math.Pow(10, -3) * Math.Pow(apr, 2));
 
             outputAPR.BackColor = Color.GhostWhite;
             outputFWFlow.BackColor = Color.GhostWhite;
-            List<string> notes = new List<string>();
 
-            string extraTextLoad = "";
+
+            string extraText = "";
+            List<string> notes = new List<string>();
             if (flow > 1000)
             {
-                extraTextLoad = "Above safe repair threshold.";
+                extraText = "Above safe repair threshold.";
             }
 
             if (totalRequested > 1350)
             {
-                extraTextLoad = "Danger, You will be getting full load rejected! Are you certain whatever you are doing is worth it?";
+                extraText = "Danger, You will be getting full load rejected! Are you certain whatever you are doing is worth it?";
                 outputAPR.BackColor = Color.Red;
             }
             else if (apr > 108)
             {
-                extraTextLoad = "Danger, APR > 108%! Are you certain whatever you are doing is worth it?";
+                extraText = "Danger, APR > 108%! Are you certain whatever you are doing is worth it?";
                 outputAPR.BackColor = Color.Red;
             }
             else if (apr > 100)
             {
-                extraTextLoad = "Warning, high load.";
+                extraText = "Warning, high load.";
                 outputAPR.BackColor = Color.DarkOrange;
             }
 
-            if (extraTextLoad != "")
+            if (extraText != "")
             {
-                notes.Add(extraTextLoad);
+                notes.Add(extraText);
             }
 
             extraNote.Text = "";
