@@ -6,10 +6,34 @@ using System.Windows.Forms;
 
 namespace RBWR_Calculator
 {
-    // Fun fact: this code sucks, but it works. It's a calculator for a fictional nuclear reactor anyway which I made because I was bored soloing unit 2.
-
     public partial class Form : System.Windows.Forms.Form
     {
+        internal static Form Instance => Application.OpenForms[nameof(Form)] as Form;
+
+        private void Loaded(object sender, EventArgs e)
+        {
+            Features.Calculations.CalculateMeetingPoint();
+        }
+
+        internal enum FormulaStatus
+        {
+            Auto,
+            Linear,
+            Quadratic
+        }
+
+        internal FormulaStatus FormulaUsage
+        {
+            get
+            {
+                if (formulaAuto.Checked)
+                    return FormulaStatus.Auto;
+                if (formulaLinear.Checked)
+                    return FormulaStatus.Linear;
+                return FormulaStatus.Quadratic;
+            }
+        }
+
         public Form()
         {
             InitializeComponent();
@@ -39,19 +63,8 @@ namespace RBWR_Calculator
             }
 
             double totalRequested = mwResult + plantUsageResult;
-            double apr;
-
-            bool useQuadratic = formulaQuadratic.Checked || formulaAuto.Checked && totalRequested >= 301;
-            if (useQuadratic)
-            {
-                apr = -0.000002121531845 * Math.Pow(totalRequested, 2) + 0.07616 * totalRequested + 10.36918;
-            }
-            else
-            {
-                apr = 0.07342 * totalRequested + 10.99763;
-            }
-
-            double flow = 82.8 + (13.7 * apr) + (5.87 * Math.Pow(10, -3) * Math.Pow(apr, 2));
+            double apr = Features.Calculations.CalculateApr(totalRequested);
+            double flow = Features.Calculations.CalculateFlow(apr);
 
             outputAPR.BackColor = Color.GhostWhite;
             outputFWFlow.BackColor = Color.GhostWhite;
