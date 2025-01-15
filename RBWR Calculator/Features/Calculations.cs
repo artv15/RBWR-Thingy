@@ -53,15 +53,21 @@ namespace RBWR_Calculator.Features
 
         internal static double CalculateApr(double totalRequested)
         {
+            Console.WriteLine(Form.Instance.FormulaUsage.ToString() + " " + _meetingPoint.ToString());
             if (double.IsNaN(_meetingPoint) && Form.Instance.FormulaUsage == Form.FormulaStatus.Auto) // fallback to linear
             {
                 return CalculateLinearApr(totalRequested);
             }
-            if (totalRequested < _meetingPoint - _hysteresis || Form.Instance.FormulaUsage == Form.FormulaStatus.Linear) // use linear fully
+
+            bool forceLinear = Form.Instance.FormulaUsage == Form.FormulaStatus.Linear;
+            bool forceQuadratic = Form.Instance.FormulaUsage == Form.FormulaStatus.Quadratic;
+            Console.WriteLine($"{forceLinear}, {forceQuadratic}");
+
+            if ((totalRequested < _meetingPoint - _hysteresis || forceLinear) && !forceQuadratic) // use linear fully
             {
                 return CalculateLinearApr(totalRequested);
             }
-            if (totalRequested > _meetingPoint + _hysteresis || Form.Instance.FormulaUsage == Form.FormulaStatus.Quadratic) // use quadratic fully
+            if (totalRequested > _meetingPoint + _hysteresis || forceQuadratic) // use quadratic fully
             {
                 return CalculateQuadraticApr(totalRequested);
             }
