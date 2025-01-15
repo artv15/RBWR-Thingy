@@ -1,5 +1,5 @@
 # RBWR Thingy
-An unfinished calculator that does two things as of now
+A calculator that does three things as of now
 
 ## MWe to APR conversion
 Can convert MWe demand and plant usage to a more or less approximate APR target.\
@@ -13,10 +13,13 @@ Will also show an approximate feedwater flow, which should also be treated as a 
 ## Pump repairs on high load
 Allows to calculate whether you can run without a pump without changing your load.\
 Pretty precise I would say, at least it worked for unit 1 when I was testing it on a private server.
+## Repairs flagger
+Useful if you get disconnected from the game from time to time, or just don't like in-game clipboard.
 
 ## Credits
-[This guide](https://docs.google.com/document/d/1Irwh4lIR1y15hKauZ3XupzsZ79sPYgwSfMnnWt8aulc/edit) by Avalakaba (@kopa_tel_oflain) for MCC formula\
-[This website](https://nxrvi.github.io/rbwrmultitoolweb/) from which I ~~shamelessly stole~~ adapted MWe to APR formula.
+[This guide](https://docs.google.com/document/d/1Irwh4lIR1y15hKauZ3XupzsZ79sPYgwSfMnnWt8aulc/edit) by Avalakaba (@kopa_tel_oflain) for the MCC formula\
+[This website](https://nxrvi.github.io/rbwrmultitoolweb/) by [Nxrvi](https://github.com/Nxrvi) for the APR to Feedwater flow formula.\
+MWe to APR formula was also initially taken from it, but after getting annoyed by it's inaccuracy, I've devised one myself using python.
 
 ## Downloads
 Check releases for precompiled app or build it yourself from source.\
