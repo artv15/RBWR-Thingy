@@ -6,14 +6,14 @@ namespace RBWR_Calculator.Features
 {
     public class Calculations
     {
-        private static double _linearA = 0.07342;
-        private static double _linearB = 10.99763;
+        private static readonly double _linearA = 0.07342;
+        private static readonly double _linearB = 10.99763;
 
-        private static double _quadraticC = -0.000002121531845;
-        private static double _quadraticD = 0.07616;
-        private static double _quadraticE = 10.36918;
+        private static readonly double _quadraticC = -0.000002121531845;
+        private static readonly double _quadraticD = 0.07616;
+        private static readonly double _quadraticE = 10.36918;
 
-        private static double _hysteresis = 10;
+        private static readonly double _hysteresis = 10;
         private static double _meetingPoint;
 
         internal static void CalculateMeetingPoint()
@@ -29,6 +29,7 @@ namespace RBWR_Calculator.Features
                 _meetingPoint = double.NaN; // No real roots
                 return;
             }
+
             double root1 = (-b + Math.Sqrt(discriminant)) / (2 * a);
             double root2 = (-b - Math.Sqrt(discriminant)) / (2 * a);
 
@@ -47,13 +48,12 @@ namespace RBWR_Calculator.Features
             else
             {
                 _meetingPoint = double.NaN;
-                MessageBox.Show("Formulas never converge, this is a sign of a broken build. Auto will always use the linear formula.", "Bad formulas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Negative convergence roots, this is a sign of a broken build. Auto will always use the linear formula.", "Bad formulas", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         internal static double CalculateApr(double totalRequested)
         {
-            Console.WriteLine(Form.Instance.FormulaUsage.ToString() + " " + _meetingPoint.ToString());
             if (double.IsNaN(_meetingPoint) && Form.Instance.FormulaUsage == Form.FormulaStatus.Auto) // fallback to linear
             {
                 return CalculateLinearApr(totalRequested);
@@ -61,7 +61,6 @@ namespace RBWR_Calculator.Features
 
             bool forceLinear = Form.Instance.FormulaUsage == Form.FormulaStatus.Linear;
             bool forceQuadratic = Form.Instance.FormulaUsage == Form.FormulaStatus.Quadratic;
-            Console.WriteLine($"{forceLinear}, {forceQuadratic}");
 
             if ((totalRequested < _meetingPoint - _hysteresis || forceLinear) && !forceQuadratic) // use linear fully
             {

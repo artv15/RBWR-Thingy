@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelPumpDeficit.Text" xml:space="preserve">
+  <data name="labelRepairDescription.Text" xml:space="preserve">
     <value>Checks whether you could increase reactor water level to 4.5m and get one of the MCC pumps repaired. Keep in mind, steam flow will increase by about 10 kg/s, so I suggest increasing outflow by 10. On average, repairs take about 200 seconds to complete, but I recommend using the default value.</value>
   </data>
 </root>

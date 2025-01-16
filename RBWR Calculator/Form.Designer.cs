@@ -30,30 +30,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.formulaQuadratic = new System.Windows.Forms.RadioButton();
-            this.formulaLinear = new System.Windows.Forms.RadioButton();
-            this.formulaAuto = new System.Windows.Forms.RadioButton();
-            this.extraNote = new System.Windows.Forms.Label();
-            this.outputFWFlow = new System.Windows.Forms.TextBox();
+            this.groupPower = new System.Windows.Forms.GroupBox();
+            this.labelPowerFormulaSelection = new System.Windows.Forms.Label();
+            this.radioPowerFormulaQuadratic = new System.Windows.Forms.RadioButton();
+            this.radioPowerFormulaLinear = new System.Windows.Forms.RadioButton();
+            this.radioPowerFormulaAuto = new System.Windows.Forms.RadioButton();
+            this.labelPowerExtraText = new System.Windows.Forms.Label();
+            this.textboxPowerOutputFlow = new System.Windows.Forms.TextBox();
             this.labelFWFlow = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelPlantUsage = new System.Windows.Forms.Label();
             this.labelDemand = new System.Windows.Forms.Label();
-            this.warningPrecision = new System.Windows.Forms.Label();
-            this.inputPlantUsage = new System.Windows.Forms.TextBox();
-            this.outputAPR = new System.Windows.Forms.TextBox();
-            this.inputMWe = new System.Windows.Forms.TextBox();
-            this.groupColdRun = new System.Windows.Forms.GroupBox();
-            this.labelCRExtraText = new System.Windows.Forms.Label();
-            this.labelCRRepairsTime = new System.Windows.Forms.Label();
-            this.inputCRTimeRepairs = new System.Windows.Forms.TextBox();
-            this.inputCRSoloPumpOut = new System.Windows.Forms.TextBox();
-            this.inputCRRVPOutflow = new System.Windows.Forms.TextBox();
+            this.labelPowerDescription = new System.Windows.Forms.Label();
+            this.textboxPowerInputPlantUsage = new System.Windows.Forms.TextBox();
+            this.textboxPowerOutputAPR = new System.Windows.Forms.TextBox();
+            this.textboxPowerInputDemand = new System.Windows.Forms.TextBox();
+            this.groupRepair = new System.Windows.Forms.GroupBox();
+            this.labelRepairExtraText = new System.Windows.Forms.Label();
+            this.labelRepairInputTime = new System.Windows.Forms.Label();
+            this.textboxInputRepairTime = new System.Windows.Forms.TextBox();
+            this.textboxRepairInputSoloPump = new System.Windows.Forms.TextBox();
+            this.textboxInputRepairFlow = new System.Windows.Forms.TextBox();
             this.labelCRPumpCapacity = new System.Windows.Forms.Label();
             this.labelCROutflow = new System.Windows.Forms.Label();
-            this.labelPumpDeficit = new System.Windows.Forms.Label();
+            this.labelRepairDescription = new System.Windows.Forms.Label();
             this.groupRepairMarkers = new System.Windows.Forms.GroupBox();
             this.repairsGroupReactor = new System.Windows.Forms.GroupBox();
             this.checkboxRepairsReactorRecirc1 = new System.Windows.Forms.CheckBox();
@@ -71,251 +71,251 @@
             this.checkboxRepairsFWP1 = new System.Windows.Forms.CheckBox();
             this.labelRepairHint = new System.Windows.Forms.Label();
             this.labelCredit = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupColdRun.SuspendLayout();
+            this.groupPower.SuspendLayout();
+            this.groupRepair.SuspendLayout();
             this.groupRepairMarkers.SuspendLayout();
             this.repairsGroupReactor.SuspendLayout();
             this.repairsGroupCondenser.SuspendLayout();
             this.repairsGroupMCC.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.formulaQuadratic);
-            this.groupBox1.Controls.Add(this.formulaLinear);
-            this.groupBox1.Controls.Add(this.formulaAuto);
-            this.groupBox1.Controls.Add(this.extraNote);
-            this.groupBox1.Controls.Add(this.outputFWFlow);
-            this.groupBox1.Controls.Add(this.labelFWFlow);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.labelPlantUsage);
-            this.groupBox1.Controls.Add(this.labelDemand);
-            this.groupBox1.Controls.Add(this.warningPrecision);
-            this.groupBox1.Controls.Add(this.inputPlantUsage);
-            this.groupBox1.Controls.Add(this.outputAPR);
-            this.groupBox1.Controls.Add(this.inputMWe);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(260, 255);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "MWe to APR";
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(6, 180);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 23);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Formula:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // formulaQuadratic
-            // 
-            this.formulaQuadratic.Location = new System.Drawing.Point(183, 179);
-            this.formulaQuadratic.Name = "formulaQuadratic";
-            this.formulaQuadratic.Size = new System.Drawing.Size(71, 24);
-            this.formulaQuadratic.TabIndex = 12;
-            this.formulaQuadratic.Text = "Quadratic";
-            this.formulaQuadratic.UseVisualStyleBackColor = true;
-            this.formulaQuadratic.CheckedChanged += new System.EventHandler(this.ForceRecalculationLoad);
-            // 
-            // formulaLinear
-            // 
-            this.formulaLinear.Location = new System.Drawing.Point(121, 179);
-            this.formulaLinear.Name = "formulaLinear";
-            this.formulaLinear.Size = new System.Drawing.Size(56, 24);
-            this.formulaLinear.TabIndex = 11;
-            this.formulaLinear.Text = "Linear";
-            this.formulaLinear.UseVisualStyleBackColor = true;
-            this.formulaLinear.CheckedChanged += new System.EventHandler(this.ForceRecalculationLoad);
-            // 
-            // formulaAuto
-            // 
-            this.formulaAuto.Checked = true;
-            this.formulaAuto.Location = new System.Drawing.Point(61, 179);
-            this.formulaAuto.Name = "formulaAuto";
-            this.formulaAuto.Size = new System.Drawing.Size(56, 24);
-            this.formulaAuto.TabIndex = 10;
-            this.formulaAuto.TabStop = true;
-            this.formulaAuto.Text = "Auto";
-            this.formulaAuto.UseVisualStyleBackColor = true;
-            this.formulaAuto.CheckedChanged += new System.EventHandler(this.ForceRecalculationLoad);
-            // 
-            // extraNote
-            // 
-            this.extraNote.Location = new System.Drawing.Point(6, 199);
-            this.extraNote.Name = "extraNote";
-            this.extraNote.Size = new System.Drawing.Size(239, 47);
-            this.extraNote.TabIndex = 9;
-            this.extraNote.Text = "No calculations performed.";
-            this.extraNote.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // outputFWFlow
-            // 
-            this.outputFWFlow.Location = new System.Drawing.Point(112, 155);
-            this.outputFWFlow.Name = "outputFWFlow";
-            this.outputFWFlow.ReadOnly = true;
-            this.outputFWFlow.Size = new System.Drawing.Size(133, 20);
-            this.outputFWFlow.TabIndex = 8;
-            // 
+            //
+            // groupPower
+            //
+            this.groupPower.Controls.Add(this.labelPowerFormulaSelection);
+            this.groupPower.Controls.Add(this.radioPowerFormulaQuadratic);
+            this.groupPower.Controls.Add(this.radioPowerFormulaLinear);
+            this.groupPower.Controls.Add(this.radioPowerFormulaAuto);
+            this.groupPower.Controls.Add(this.labelPowerExtraText);
+            this.groupPower.Controls.Add(this.textboxPowerOutputFlow);
+            this.groupPower.Controls.Add(this.labelFWFlow);
+            this.groupPower.Controls.Add(this.label1);
+            this.groupPower.Controls.Add(this.labelPlantUsage);
+            this.groupPower.Controls.Add(this.labelDemand);
+            this.groupPower.Controls.Add(this.labelPowerDescription);
+            this.groupPower.Controls.Add(this.textboxPowerInputPlantUsage);
+            this.groupPower.Controls.Add(this.textboxPowerOutputAPR);
+            this.groupPower.Controls.Add(this.textboxPowerInputDemand);
+            this.groupPower.Location = new System.Drawing.Point(12, 12);
+            this.groupPower.Name = "groupPower";
+            this.groupPower.Size = new System.Drawing.Size(260, 255);
+            this.groupPower.TabIndex = 0;
+            this.groupPower.TabStop = false;
+            this.groupPower.Text = "MWe to APR";
+            //
+            // labelPowerFormulaSelection
+            //
+            this.labelPowerFormulaSelection.Location = new System.Drawing.Point(6, 180);
+            this.labelPowerFormulaSelection.Name = "labelPowerFormulaSelection";
+            this.labelPowerFormulaSelection.Size = new System.Drawing.Size(49, 23);
+            this.labelPowerFormulaSelection.TabIndex = 13;
+            this.labelPowerFormulaSelection.Text = "Formula:";
+            this.labelPowerFormulaSelection.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //
+            // radioPowerFormulaQuadratic
+            //
+            this.radioPowerFormulaQuadratic.Location = new System.Drawing.Point(183, 179);
+            this.radioPowerFormulaQuadratic.Name = "radioPowerFormulaQuadratic";
+            this.radioPowerFormulaQuadratic.Size = new System.Drawing.Size(71, 24);
+            this.radioPowerFormulaQuadratic.TabIndex = 12;
+            this.radioPowerFormulaQuadratic.Text = "Quadratic";
+            this.radioPowerFormulaQuadratic.UseVisualStyleBackColor = true;
+            this.radioPowerFormulaQuadratic.CheckedChanged += new System.EventHandler(this.ForceRecalculationLoad);
+            //
+            // radioPowerFormulaLinear
+            //
+            this.radioPowerFormulaLinear.Location = new System.Drawing.Point(121, 179);
+            this.radioPowerFormulaLinear.Name = "radioPowerFormulaLinear";
+            this.radioPowerFormulaLinear.Size = new System.Drawing.Size(56, 24);
+            this.radioPowerFormulaLinear.TabIndex = 11;
+            this.radioPowerFormulaLinear.Text = "Linear";
+            this.radioPowerFormulaLinear.UseVisualStyleBackColor = true;
+            this.radioPowerFormulaLinear.CheckedChanged += new System.EventHandler(this.ForceRecalculationLoad);
+            //
+            // radioPowerFormulaAuto
+            //
+            this.radioPowerFormulaAuto.Checked = true;
+            this.radioPowerFormulaAuto.Location = new System.Drawing.Point(61, 179);
+            this.radioPowerFormulaAuto.Name = "radioPowerFormulaAuto";
+            this.radioPowerFormulaAuto.Size = new System.Drawing.Size(56, 24);
+            this.radioPowerFormulaAuto.TabIndex = 10;
+            this.radioPowerFormulaAuto.TabStop = true;
+            this.radioPowerFormulaAuto.Text = "Auto";
+            this.radioPowerFormulaAuto.UseVisualStyleBackColor = true;
+            this.radioPowerFormulaAuto.CheckedChanged += new System.EventHandler(this.ForceRecalculationLoad);
+            //
+            // labelPowerExtraText
+            //
+            this.labelPowerExtraText.Location = new System.Drawing.Point(6, 199);
+            this.labelPowerExtraText.Name = "labelPowerExtraText";
+            this.labelPowerExtraText.Size = new System.Drawing.Size(239, 47);
+            this.labelPowerExtraText.TabIndex = 9;
+            this.labelPowerExtraText.Text = "No calculations performed.";
+            this.labelPowerExtraText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            //
+            // textboxPowerOutputFlow
+            //
+            this.textboxPowerOutputFlow.Location = new System.Drawing.Point(112, 155);
+            this.textboxPowerOutputFlow.Name = "textboxPowerOutputFlow";
+            this.textboxPowerOutputFlow.ReadOnly = true;
+            this.textboxPowerOutputFlow.Size = new System.Drawing.Size(133, 20);
+            this.textboxPowerOutputFlow.TabIndex = 8;
+            //
             // labelFWFlow
-            // 
+            //
             this.labelFWFlow.Location = new System.Drawing.Point(6, 158);
             this.labelFWFlow.Name = "labelFWFlow";
             this.labelFWFlow.Size = new System.Drawing.Size(100, 23);
             this.labelFWFlow.TabIndex = 7;
             this.labelFWFlow.Text = "Feedwater Flow";
-            // 
+            //
             // label1
-            // 
+            //
             this.label1.Location = new System.Drawing.Point(6, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 6;
-            this.label1.Text = "APR (approx)";
+            this.label1.Text = "APR";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // labelPlantUsage
-            // 
+            //
             this.labelPlantUsage.Location = new System.Drawing.Point(6, 100);
             this.labelPlantUsage.Name = "labelPlantUsage";
             this.labelPlantUsage.Size = new System.Drawing.Size(100, 23);
             this.labelPlantUsage.TabIndex = 5;
             this.labelPlantUsage.Text = "Plant usage (MWe)";
             this.labelPlantUsage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // labelDemand
-            // 
+            //
             this.labelDemand.Location = new System.Drawing.Point(6, 77);
             this.labelDemand.Name = "labelDemand";
             this.labelDemand.Size = new System.Drawing.Size(100, 23);
             this.labelDemand.TabIndex = 4;
             this.labelDemand.Text = "Demand (MWe)";
             this.labelDemand.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // warningPrecision
-            // 
-            this.warningPrecision.Location = new System.Drawing.Point(6, 16);
-            this.warningPrecision.Name = "warningPrecision";
-            this.warningPrecision.Size = new System.Drawing.Size(239, 58);
-            this.warningPrecision.TabIndex = 3;
-            this.warningPrecision.Text = "Used formula assumes that the turbine is running at 7100 kPa and all preheaters a" + "re OK. Fun fact: If you have a different output and the turbine is running at 71" + "00, you have a broken preheater.";
-            // 
-            // inputPlantUsage
-            // 
-            this.inputPlantUsage.Location = new System.Drawing.Point(112, 103);
-            this.inputPlantUsage.Name = "inputPlantUsage";
-            this.inputPlantUsage.Size = new System.Drawing.Size(133, 20);
-            this.inputPlantUsage.TabIndex = 2;
-            this.inputPlantUsage.Text = "61.32";
-            this.inputPlantUsage.TextChanged += new System.EventHandler(this.ForceRecalculationLoad);
-            // 
-            // outputAPR
-            // 
-            this.outputAPR.Location = new System.Drawing.Point(112, 129);
-            this.outputAPR.Name = "outputAPR";
-            this.outputAPR.ReadOnly = true;
-            this.outputAPR.Size = new System.Drawing.Size(133, 20);
-            this.outputAPR.TabIndex = 1;
-            // 
-            // inputMWe
-            // 
-            this.inputMWe.Location = new System.Drawing.Point(112, 77);
-            this.inputMWe.Name = "inputMWe";
-            this.inputMWe.Size = new System.Drawing.Size(133, 20);
-            this.inputMWe.TabIndex = 0;
-            this.inputMWe.TextChanged += new System.EventHandler(this.ForceRecalculationLoad);
-            // 
-            // groupColdRun
-            // 
-            this.groupColdRun.Controls.Add(this.labelCRExtraText);
-            this.groupColdRun.Controls.Add(this.labelCRRepairsTime);
-            this.groupColdRun.Controls.Add(this.inputCRTimeRepairs);
-            this.groupColdRun.Controls.Add(this.inputCRSoloPumpOut);
-            this.groupColdRun.Controls.Add(this.inputCRRVPOutflow);
-            this.groupColdRun.Controls.Add(this.labelCRPumpCapacity);
-            this.groupColdRun.Controls.Add(this.labelCROutflow);
-            this.groupColdRun.Controls.Add(this.labelPumpDeficit);
-            this.groupColdRun.Location = new System.Drawing.Point(278, 12);
-            this.groupColdRun.Name = "groupColdRun";
-            this.groupColdRun.Size = new System.Drawing.Size(275, 255);
-            this.groupColdRun.TabIndex = 1;
-            this.groupColdRun.TabStop = false;
-            this.groupColdRun.Text = "MCC Repair Assist";
-            // 
-            // labelCRExtraText
-            // 
-            this.labelCRExtraText.Location = new System.Drawing.Point(6, 199);
-            this.labelCRExtraText.Name = "labelCRExtraText";
-            this.labelCRExtraText.Size = new System.Drawing.Size(263, 47);
-            this.labelCRExtraText.TabIndex = 7;
-            this.labelCRExtraText.Text = "No calculations performed";
-            this.labelCRExtraText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelCRRepairsTime
-            // 
-            this.labelCRRepairsTime.Location = new System.Drawing.Point(6, 164);
-            this.labelCRRepairsTime.Name = "labelCRRepairsTime";
-            this.labelCRRepairsTime.Size = new System.Drawing.Size(148, 23);
-            this.labelCRRepairsTime.TabIndex = 6;
-            this.labelCRRepairsTime.Text = "Expected Repairs Time";
-            this.labelCRRepairsTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // inputCRTimeRepairs
-            // 
-            this.inputCRTimeRepairs.Location = new System.Drawing.Point(169, 161);
-            this.inputCRTimeRepairs.Name = "inputCRTimeRepairs";
-            this.inputCRTimeRepairs.Size = new System.Drawing.Size(100, 20);
-            this.inputCRTimeRepairs.TabIndex = 5;
-            this.inputCRTimeRepairs.Text = "330";
-            this.inputCRTimeRepairs.TextChanged += new System.EventHandler(this.ForceRecalculationColdRun);
-            // 
-            // inputCRSoloPumpOut
-            // 
-            this.inputCRSoloPumpOut.Location = new System.Drawing.Point(169, 135);
-            this.inputCRSoloPumpOut.Name = "inputCRSoloPumpOut";
-            this.inputCRSoloPumpOut.Size = new System.Drawing.Size(100, 20);
-            this.inputCRSoloPumpOut.TabIndex = 4;
-            this.inputCRSoloPumpOut.TextChanged += new System.EventHandler(this.ForceRecalculationColdRun);
-            // 
-            // inputCRRVPOutflow
-            // 
-            this.inputCRRVPOutflow.Location = new System.Drawing.Point(169, 109);
-            this.inputCRRVPOutflow.Name = "inputCRRVPOutflow";
-            this.inputCRRVPOutflow.Size = new System.Drawing.Size(100, 20);
-            this.inputCRRVPOutflow.TabIndex = 3;
-            this.inputCRRVPOutflow.TextChanged += new System.EventHandler(this.ForceRecalculationColdRun);
-            // 
+            //
+            // labelPowerDescription
+            //
+            this.labelPowerDescription.Location = new System.Drawing.Point(6, 16);
+            this.labelPowerDescription.Name = "labelPowerDescription";
+            this.labelPowerDescription.Size = new System.Drawing.Size(239, 58);
+            this.labelPowerDescription.TabIndex = 3;
+            this.labelPowerDescription.Text = "Used formula assumes that the turbine is running at 7100 kPa and all preheaters a" + "re OK. Fun fact: If you have a different output and the turbine is running at 71" + "00, you have a broken preheater.";
+            //
+            // textboxPowerInputPlantUsage
+            //
+            this.textboxPowerInputPlantUsage.Location = new System.Drawing.Point(112, 103);
+            this.textboxPowerInputPlantUsage.Name = "textboxPowerInputPlantUsage";
+            this.textboxPowerInputPlantUsage.Size = new System.Drawing.Size(133, 20);
+            this.textboxPowerInputPlantUsage.TabIndex = 2;
+            this.textboxPowerInputPlantUsage.Text = "61.32";
+            this.textboxPowerInputPlantUsage.TextChanged += new System.EventHandler(this.ForceRecalculationLoad);
+            //
+            // textboxPowerOutputAPR
+            //
+            this.textboxPowerOutputAPR.Location = new System.Drawing.Point(112, 129);
+            this.textboxPowerOutputAPR.Name = "textboxPowerOutputAPR";
+            this.textboxPowerOutputAPR.ReadOnly = true;
+            this.textboxPowerOutputAPR.Size = new System.Drawing.Size(133, 20);
+            this.textboxPowerOutputAPR.TabIndex = 1;
+            //
+            // textboxPowerInputDemand
+            //
+            this.textboxPowerInputDemand.Location = new System.Drawing.Point(112, 77);
+            this.textboxPowerInputDemand.Name = "textboxPowerInputDemand";
+            this.textboxPowerInputDemand.Size = new System.Drawing.Size(133, 20);
+            this.textboxPowerInputDemand.TabIndex = 0;
+            this.textboxPowerInputDemand.TextChanged += new System.EventHandler(this.ForceRecalculationLoad);
+            //
+            // groupRepair
+            //
+            this.groupRepair.Controls.Add(this.labelRepairExtraText);
+            this.groupRepair.Controls.Add(this.labelRepairInputTime);
+            this.groupRepair.Controls.Add(this.textboxInputRepairTime);
+            this.groupRepair.Controls.Add(this.textboxRepairInputSoloPump);
+            this.groupRepair.Controls.Add(this.textboxInputRepairFlow);
+            this.groupRepair.Controls.Add(this.labelCRPumpCapacity);
+            this.groupRepair.Controls.Add(this.labelCROutflow);
+            this.groupRepair.Controls.Add(this.labelRepairDescription);
+            this.groupRepair.Location = new System.Drawing.Point(278, 12);
+            this.groupRepair.Name = "groupRepair";
+            this.groupRepair.Size = new System.Drawing.Size(275, 255);
+            this.groupRepair.TabIndex = 1;
+            this.groupRepair.TabStop = false;
+            this.groupRepair.Text = "MCC Repair Assist";
+            //
+            // labelRepairExtraText
+            //
+            this.labelRepairExtraText.Location = new System.Drawing.Point(6, 199);
+            this.labelRepairExtraText.Name = "labelRepairExtraText";
+            this.labelRepairExtraText.Size = new System.Drawing.Size(263, 47);
+            this.labelRepairExtraText.TabIndex = 7;
+            this.labelRepairExtraText.Text = "No calculations performed";
+            this.labelRepairExtraText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            //
+            // labelRepairInputTime
+            //
+            this.labelRepairInputTime.Location = new System.Drawing.Point(6, 164);
+            this.labelRepairInputTime.Name = "labelRepairInputTime";
+            this.labelRepairInputTime.Size = new System.Drawing.Size(148, 23);
+            this.labelRepairInputTime.TabIndex = 6;
+            this.labelRepairInputTime.Text = "Expected Repairs Time";
+            this.labelRepairInputTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //
+            // textboxInputRepairTime
+            //
+            this.textboxInputRepairTime.Location = new System.Drawing.Point(169, 161);
+            this.textboxInputRepairTime.Name = "textboxInputRepairTime";
+            this.textboxInputRepairTime.Size = new System.Drawing.Size(100, 20);
+            this.textboxInputRepairTime.TabIndex = 5;
+            this.textboxInputRepairTime.Text = "330";
+            this.textboxInputRepairTime.TextChanged += new System.EventHandler(this.ForceRecalculationColdRun);
+            //
+            // textboxRepairInputSoloPump
+            //
+            this.textboxRepairInputSoloPump.Location = new System.Drawing.Point(169, 135);
+            this.textboxRepairInputSoloPump.Name = "textboxRepairInputSoloPump";
+            this.textboxRepairInputSoloPump.Size = new System.Drawing.Size(100, 20);
+            this.textboxRepairInputSoloPump.TabIndex = 4;
+            this.textboxRepairInputSoloPump.TextChanged += new System.EventHandler(this.ForceRecalculationColdRun);
+            //
+            // textboxInputRepairFlow
+            //
+            this.textboxInputRepairFlow.Location = new System.Drawing.Point(169, 109);
+            this.textboxInputRepairFlow.Name = "textboxInputRepairFlow";
+            this.textboxInputRepairFlow.Size = new System.Drawing.Size(100, 20);
+            this.textboxInputRepairFlow.TabIndex = 3;
+            this.textboxInputRepairFlow.TextChanged += new System.EventHandler(this.ForceRecalculationColdRun);
+            //
             // labelCRPumpCapacity
-            // 
+            //
             this.labelCRPumpCapacity.Location = new System.Drawing.Point(6, 133);
             this.labelCRPumpCapacity.Name = "labelCRPumpCapacity";
             this.labelCRPumpCapacity.Size = new System.Drawing.Size(111, 22);
             this.labelCRPumpCapacity.TabIndex = 2;
             this.labelCRPumpCapacity.Text = "Solo Pump Capacity";
             this.labelCRPumpCapacity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // labelCROutflow
-            // 
+            //
             this.labelCROutflow.Location = new System.Drawing.Point(6, 107);
             this.labelCROutflow.Name = "labelCROutflow";
             this.labelCROutflow.Size = new System.Drawing.Size(111, 23);
             this.labelCROutflow.TabIndex = 1;
             this.labelCROutflow.Text = "RPV Outflow ";
             this.labelCROutflow.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelPumpDeficit
-            // 
-            this.labelPumpDeficit.Location = new System.Drawing.Point(6, 15);
-            this.labelPumpDeficit.Name = "labelPumpDeficit";
-            this.labelPumpDeficit.Size = new System.Drawing.Size(263, 85);
-            this.labelPumpDeficit.TabIndex = 0;
-            this.labelPumpDeficit.Text = resources.GetString("labelPumpDeficit.Text");
-            // 
+            //
+            // labelRepairDescription
+            //
+            this.labelRepairDescription.Location = new System.Drawing.Point(6, 15);
+            this.labelRepairDescription.Name = "labelRepairDescription";
+            this.labelRepairDescription.Size = new System.Drawing.Size(263, 85);
+            this.labelRepairDescription.TabIndex = 0;
+            this.labelRepairDescription.Text = resources.GetString("labelRepairDescription.Text");
+            //
             // groupRepairMarkers
-            // 
+            //
             this.groupRepairMarkers.Controls.Add(this.repairsGroupReactor);
             this.groupRepairMarkers.Controls.Add(this.repairsGroupCondenser);
             this.groupRepairMarkers.Controls.Add(this.repairsGroupMCC);
@@ -326,9 +326,9 @@
             this.groupRepairMarkers.TabIndex = 2;
             this.groupRepairMarkers.TabStop = false;
             this.groupRepairMarkers.Text = "Repairs Flagger";
-            // 
+            //
             // repairsGroupReactor
-            // 
+            //
             this.repairsGroupReactor.Controls.Add(this.checkboxRepairsReactorRecirc1);
             this.repairsGroupReactor.Controls.Add(this.checkboxRepairsReactorRecirc2);
             this.repairsGroupReactor.Location = new System.Drawing.Point(148, 161);
@@ -337,27 +337,27 @@
             this.repairsGroupReactor.TabIndex = 3;
             this.repairsGroupReactor.TabStop = false;
             this.repairsGroupReactor.Text = "Reactor";
-            // 
+            //
             // checkboxRepairsReactorRecirc1
-            // 
+            //
             this.checkboxRepairsReactorRecirc1.Location = new System.Drawing.Point(6, 19);
             this.checkboxRepairsReactorRecirc1.Name = "checkboxRepairsReactorRecirc1";
             this.checkboxRepairsReactorRecirc1.Size = new System.Drawing.Size(104, 24);
             this.checkboxRepairsReactorRecirc1.TabIndex = 2;
             this.checkboxRepairsReactorRecirc1.Text = "Recirc 1";
             this.checkboxRepairsReactorRecirc1.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkboxRepairsReactorRecirc2
-            // 
+            //
             this.checkboxRepairsReactorRecirc2.Location = new System.Drawing.Point(6, 38);
             this.checkboxRepairsReactorRecirc2.Name = "checkboxRepairsReactorRecirc2";
             this.checkboxRepairsReactorRecirc2.Size = new System.Drawing.Size(104, 24);
             this.checkboxRepairsReactorRecirc2.TabIndex = 4;
             this.checkboxRepairsReactorRecirc2.Text = "Recirc 2";
             this.checkboxRepairsReactorRecirc2.UseVisualStyleBackColor = true;
-            // 
+            //
             // repairsGroupCondenser
-            // 
+            //
             this.repairsGroupCondenser.Controls.Add(this.checkboxRepairsCondenserRecirc2);
             this.repairsGroupCondenser.Controls.Add(this.checkboxRepairsCondenserRecirc1);
             this.repairsGroupCondenser.Location = new System.Drawing.Point(148, 77);
@@ -366,27 +366,27 @@
             this.repairsGroupCondenser.TabIndex = 3;
             this.repairsGroupCondenser.TabStop = false;
             this.repairsGroupCondenser.Text = "Condenser";
-            // 
+            //
             // checkboxRepairsCondenserRecirc2
-            // 
+            //
             this.checkboxRepairsCondenserRecirc2.Location = new System.Drawing.Point(6, 38);
             this.checkboxRepairsCondenserRecirc2.Name = "checkboxRepairsCondenserRecirc2";
             this.checkboxRepairsCondenserRecirc2.Size = new System.Drawing.Size(104, 24);
             this.checkboxRepairsCondenserRecirc2.TabIndex = 1;
             this.checkboxRepairsCondenserRecirc2.Text = "Recirc 2";
             this.checkboxRepairsCondenserRecirc2.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkboxRepairsCondenserRecirc1
-            // 
+            //
             this.checkboxRepairsCondenserRecirc1.Location = new System.Drawing.Point(6, 19);
             this.checkboxRepairsCondenserRecirc1.Name = "checkboxRepairsCondenserRecirc1";
             this.checkboxRepairsCondenserRecirc1.Size = new System.Drawing.Size(104, 24);
             this.checkboxRepairsCondenserRecirc1.TabIndex = 0;
             this.checkboxRepairsCondenserRecirc1.Text = "Recirc 1";
             this.checkboxRepairsCondenserRecirc1.UseVisualStyleBackColor = true;
-            // 
+            //
             // repairsGroupMCC
-            // 
+            //
             this.repairsGroupMCC.Controls.Add(this.checkboxRepairsMCCCond2);
             this.repairsGroupMCC.Controls.Add(this.checkboxRepairsPH1);
             this.repairsGroupMCC.Controls.Add(this.checkboxRepairsPH2);
@@ -400,101 +400,101 @@
             this.repairsGroupMCC.TabIndex = 19;
             this.repairsGroupMCC.TabStop = false;
             this.repairsGroupMCC.Text = "MCC";
-            // 
+            //
             // checkboxRepairsMCCCond2
-            // 
+            //
             this.checkboxRepairsMCCCond2.Location = new System.Drawing.Point(6, 96);
             this.checkboxRepairsMCCCond2.Name = "checkboxRepairsMCCCond2";
             this.checkboxRepairsMCCCond2.Size = new System.Drawing.Size(96, 20);
             this.checkboxRepairsMCCCond2.TabIndex = 18;
             this.checkboxRepairsMCCCond2.Text = "Cond 2";
             this.checkboxRepairsMCCCond2.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkboxRepairsPH1
-            // 
+            //
             this.checkboxRepairsPH1.Location = new System.Drawing.Point(6, 19);
             this.checkboxRepairsPH1.Name = "checkboxRepairsPH1";
             this.checkboxRepairsPH1.Size = new System.Drawing.Size(96, 20);
             this.checkboxRepairsPH1.TabIndex = 12;
             this.checkboxRepairsPH1.Text = "PH1";
             this.checkboxRepairsPH1.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkboxRepairsPH2
-            // 
+            //
             this.checkboxRepairsPH2.Location = new System.Drawing.Point(6, 36);
             this.checkboxRepairsPH2.Name = "checkboxRepairsPH2";
             this.checkboxRepairsPH2.Size = new System.Drawing.Size(96, 20);
             this.checkboxRepairsPH2.TabIndex = 14;
             this.checkboxRepairsPH2.Text = "PH2";
             this.checkboxRepairsPH2.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkboxRepairsFWP2
-            // 
+            //
             this.checkboxRepairsFWP2.Location = new System.Drawing.Point(6, 139);
             this.checkboxRepairsFWP2.Name = "checkboxRepairsFWP2";
             this.checkboxRepairsFWP2.Size = new System.Drawing.Size(96, 20);
             this.checkboxRepairsFWP2.TabIndex = 16;
             this.checkboxRepairsFWP2.Text = "FWP2";
             this.checkboxRepairsFWP2.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkboxRepairsPH3
-            // 
+            //
             this.checkboxRepairsPH3.Location = new System.Drawing.Point(6, 53);
             this.checkboxRepairsPH3.Name = "checkboxRepairsPH3";
             this.checkboxRepairsPH3.Size = new System.Drawing.Size(96, 20);
             this.checkboxRepairsPH3.TabIndex = 13;
             this.checkboxRepairsPH3.Text = "PH3";
             this.checkboxRepairsPH3.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkboxRepairsMCCCond1
-            // 
+            //
             this.checkboxRepairsMCCCond1.Location = new System.Drawing.Point(6, 79);
             this.checkboxRepairsMCCCond1.Name = "checkboxRepairsMCCCond1";
             this.checkboxRepairsMCCCond1.Size = new System.Drawing.Size(96, 20);
             this.checkboxRepairsMCCCond1.TabIndex = 17;
             this.checkboxRepairsMCCCond1.Text = "Cond 1";
             this.checkboxRepairsMCCCond1.UseVisualStyleBackColor = true;
-            // 
+            //
             // checkboxRepairsFWP1
-            // 
+            //
             this.checkboxRepairsFWP1.Location = new System.Drawing.Point(6, 122);
             this.checkboxRepairsFWP1.Name = "checkboxRepairsFWP1";
             this.checkboxRepairsFWP1.Size = new System.Drawing.Size(96, 20);
             this.checkboxRepairsFWP1.TabIndex = 15;
             this.checkboxRepairsFWP1.Text = "FWP1";
             this.checkboxRepairsFWP1.UseVisualStyleBackColor = true;
-            // 
+            //
             // labelRepairHint
-            // 
+            //
             this.labelRepairHint.Location = new System.Drawing.Point(6, 16);
             this.labelRepairHint.Name = "labelRepairHint";
             this.labelRepairHint.Size = new System.Drawing.Size(263, 63);
             this.labelRepairHint.TabIndex = 0;
             this.labelRepairHint.Text = "This section contains checkmarks that you can use to mark broken stuff. While you" + " could just use in-game clipboard, this might be useful if you get disconnected " + "from time to time.\r\n";
-            // 
+            //
             // labelCredit
-            // 
+            //
             this.labelCredit.Location = new System.Drawing.Point(12, 270);
             this.labelCredit.Name = "labelCredit";
             this.labelCredit.Size = new System.Drawing.Size(822, 23);
             this.labelCredit.TabIndex = 3;
             this.labelCredit.Text = "Created by Treeshold (artv1505). ~ Please announce RSTs or shutdowns before tripp" + "ing stuff. PA exists for this sole reason.";
-            // 
+            //
             // Form
-            // 
+            //
             this.ClientSize = new System.Drawing.Size(843, 291);
             this.Controls.Add(this.labelCredit);
             this.Controls.Add(this.groupRepairMarkers);
-            this.Controls.Add(this.groupColdRun);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupRepair);
+            this.Controls.Add(this.groupPower);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form";
             this.Text = "RBWR thingy";
             this.Shown += new System.EventHandler(this.Loaded);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupColdRun.ResumeLayout(false);
-            this.groupColdRun.PerformLayout();
+            this.groupPower.ResumeLayout(false);
+            this.groupPower.PerformLayout();
+            this.groupRepair.ResumeLayout(false);
+            this.groupRepair.PerformLayout();
             this.groupRepairMarkers.ResumeLayout(false);
             this.repairsGroupReactor.ResumeLayout(false);
             this.repairsGroupCondenser.ResumeLayout(false);
@@ -502,10 +502,10 @@
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.RadioButton formulaAuto;
-        private System.Windows.Forms.RadioButton formulaLinear;
-        private System.Windows.Forms.RadioButton formulaQuadratic;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton radioPowerFormulaAuto;
+        private System.Windows.Forms.RadioButton radioPowerFormulaLinear;
+        private System.Windows.Forms.RadioButton radioPowerFormulaQuadratic;
+        private System.Windows.Forms.Label labelPowerFormulaSelection;
 
         private System.Windows.Forms.Label labelCredit;
 
@@ -529,24 +529,24 @@
         private System.Windows.Forms.GroupBox groupRepairMarkers;
         private System.Windows.Forms.Label labelRepairHint;
 
-        private System.Windows.Forms.TextBox inputCRTimeRepairs;
-        private System.Windows.Forms.Label labelCRRepairsTime;
+        private System.Windows.Forms.TextBox textboxInputRepairTime;
+        private System.Windows.Forms.Label labelRepairInputTime;
 
         private System.Windows.Forms.Label labelCROutflow;
 
-        private System.Windows.Forms.TextBox inputCRSoloPumpOut;
+        private System.Windows.Forms.TextBox textboxRepairInputSoloPump;
 
-        private System.Windows.Forms.TextBox inputCRRVPOutflow;
+        private System.Windows.Forms.TextBox textboxInputRepairFlow;
 
-        private System.Windows.Forms.Label labelCRExtraText;
+        private System.Windows.Forms.Label labelRepairExtraText;
 
-        private System.Windows.Forms.Label labelPumpDeficit;
+        private System.Windows.Forms.Label labelRepairDescription;
 
-        private System.Windows.Forms.GroupBox groupColdRun;
+        private System.Windows.Forms.GroupBox groupRepair;
 
-        private System.Windows.Forms.Label extraNote;
+        private System.Windows.Forms.Label labelPowerExtraText;
 
-        private System.Windows.Forms.TextBox outputFWFlow;
+        private System.Windows.Forms.TextBox textboxPowerOutputFlow;
 
         private System.Windows.Forms.Label labelFWFlow;
 
@@ -554,15 +554,15 @@
 
         private System.Windows.Forms.Label labelDemand;
 
-        private System.Windows.Forms.Label warningPrecision;
+        private System.Windows.Forms.Label labelPowerDescription;
         private System.Windows.Forms.Label labelPlantUsage;
 
-        private System.Windows.Forms.TextBox inputPlantUsage;
+        private System.Windows.Forms.TextBox textboxPowerInputPlantUsage;
 
-        private System.Windows.Forms.TextBox inputMWe;
-        private System.Windows.Forms.TextBox outputAPR;
+        private System.Windows.Forms.TextBox textboxPowerInputDemand;
+        private System.Windows.Forms.TextBox textboxPowerOutputAPR;
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupPower;
 
         private System.Windows.Forms.Label labelCRPumpCapacity;
 
