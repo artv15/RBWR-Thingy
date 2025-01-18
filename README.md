@@ -1,23 +1,27 @@
 # RBWR Thingy
-A multitool that does three things as of now
+A multitool for [Realistic Boiling Water Reactor Simulator](https://www.roblox.com/games/11765852158) game on Roblox
 
-## MWe to APR conversion
+## Features
+### MWe to APR conversion
 Can convert MWe demand and plant usage to a more or less approximate APR target.\
-As far as I have tested, there is about 0.1 MWe difference when within 20-100% APR range, and 1 MWe difference outside this range. Only applies if you are using auto.\
-Actual value may be wrong if:
-- Steam pressure is not at 7.1 MPa
-- You have a broken/disabled preheater
-- You have not updated plant usage
-- Sealing is not at 0.25 bar (unit 2 only)
 
-Will also show an approximate feedwater flow, which should be treated as a rough approximation (±30 kg/s).
+> [!NOTE]
+> Keep in mind that MWe to APR conversion is not 100% perfect, and there are a couple reasons why the resulting APR may be wrong:
+> - Steam Pressure is not at 7.1 MPa
+> - At leat one preheater is broken/disabled (using this calculator is a way to check them btw)
+> - You have not updated plant usage
+> - Steam sealing pressure is not at 0.25 bar (applies only to unit 2)
+> 
+> Other than that, the formula is pretty precise (≈1 MWe difference) if you are using automatic formula selection.
 
-*On the note of formulas, quadratic works well on high gen loads, and is inprecise on low ones. Linear is the opposite, good on low, bad on high. Auto just switches them at the point of convergence (around 290 MWe, but it may change if I update the formulas) with smoothing, and I highly recommend to just leave it on auto.*
-## Pump repairs on high load
+Will also show an approximate feedwater flow, which should be treated as a **rough approximation** (±30 kg/s).
+Useful when you are making rapid adjustments and want to just forget about MCC.
+### Pump repairs on high outflow
 Allows to calculate whether you can run without a pump without changing your load.\
-Pretty precise I would say, at least it worked for unit 1 when I was testing it on a private server.
-It may be easier to do in unit 2, since pump lag is actually helpful this time.
-## Repairs flagger
+Pretty precise I would say, at least it worked for unit 1 when I was testing it on a private server.\
+
+I assume that pump shutoff is instant (like in unit 1). In unit 2, these repairs may actually be easier, since pump lag is benefitial for once.
+### Repairs flagger
 Useful if you get disconnected from the game from time to time, or just don't like in-game clipboard.
 
 ## Credits
@@ -29,8 +33,7 @@ Useful if you get disconnected from the game from time to time, or just don't li
 Check releases for precompiled app or build it yourself from source.\
 You need .Net Framework v4.8.1 to compile it.
 
-## Suggestions
+## Extra
 Feel free to give suggestions or report any bugs via [issues](https://github.com/artv15/RBWR-Thingy/issues).
-
-## Disclaimer
-i'm not responsible if I get your reactor explodet, sowwy
+> [!CAUTION]
+> i'm not responsible if I get your reactor explodet, sowwy
