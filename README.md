@@ -25,8 +25,8 @@ I assume that pump shutoff is instant (like in unit 1). In unit 2, these repairs
 Useful if you get disconnected from the game from time to time, or just don't like in-game clipboard.
 
 ## Credits
-[This guide](https://docs.google.com/document/d/1Irwh4lIR1y15hKauZ3XupzsZ79sPYgwSfMnnWt8aulc/edit) by Avalakaba (@kopa_tel_oflain) for the MCC formula (RPV capacity is slightly wrong in this one, it should be 75000 kg/m, not 100000 kg/m)\
-[This website](https://nxrvi.github.io/rbwrmultitoolweb/) by [Nxrvi](https://github.com/Nxrvi) for the previous Gen Load to APR and APR to Feedwater flow formula.
+- [This guide](https://docs.google.com/document/d/1Irwh4lIR1y15hKauZ3XupzsZ79sPYgwSfMnnWt8aulc/edit) by Avalakaba (@kopa_tel_oflain) for the MCC formula (RPV capacity is slightly wrong in this one, it should be 75000 kg/m, not 100000 kg/m)\
+- [This website](https://nxrvi.github.io/rbwrmultitoolweb/) by [Nxrvi](https://github.com/Nxrvi) for the previous Gen Load to APR and APR to Feedwater flow formula.
 
 ## Downloads
 Check releases for precompiled app or build it yourself from source.\
