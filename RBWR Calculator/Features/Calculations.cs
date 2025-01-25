@@ -6,21 +6,21 @@ namespace RBWR_Calculator.Features
 {
     public class Calculations
     {
-        private static readonly double _linearA = 0.07342;
-        private static readonly double _linearB = 10.99763;
+        private const double LinearA = 0.07342488;
+        private const double LinearB = 11.00409;
 
-        private static readonly double _quadraticC = -0.000002121531845;
-        private static readonly double _quadraticD = 0.07616;
-        private static readonly double _quadraticE = 10.36918;
+        private const double QuadraticC = -0.000002121531845;
+        private const double QuadraticD = 0.07616;
+        private const double QuadraticE = 10.36918;
 
-        private static readonly double _hysteresis = 10;
+        private const double Hysteresis = 10;
         private static double _meetingPoint;
 
         internal static void CalculateMeetingPoint()
         {
-            double a = _quadraticC;
-            double b = _quadraticD - _linearA;
-            double c = _quadraticE - _linearB;
+            double a = QuadraticC;
+            double b = QuadraticD - LinearA;
+            double c = QuadraticE - LinearB;
 
             double discriminant = b * b - 4 * a * c;
             if (discriminant < 0)
@@ -62,32 +62,32 @@ namespace RBWR_Calculator.Features
             bool forceLinear = Form.Instance.FormulaUsage == Form.FormulaStatus.Linear;
             bool forceQuadratic = Form.Instance.FormulaUsage == Form.FormulaStatus.Quadratic;
 
-            if ((totalRequested < _meetingPoint - _hysteresis || forceLinear) && !forceQuadratic) // use linear fully
+            if ((totalRequested < _meetingPoint - Hysteresis || forceLinear) && !forceQuadratic) // use linear fully
             {
                 return CalculateLinearApr(totalRequested);
             }
-            if (totalRequested > _meetingPoint + _hysteresis || forceQuadratic) // use quadratic fully
+            if (totalRequested > _meetingPoint + Hysteresis || forceQuadratic) // use quadratic fully
             {
                 return CalculateQuadraticApr(totalRequested);
             }
 
-            double weight = (totalRequested - (_meetingPoint - _hysteresis)) / (2 * _hysteresis);
+            double weight = (totalRequested - (_meetingPoint - Hysteresis)) / (2 * Hysteresis);
             return (1 - weight) * CalculateLinearApr(totalRequested) + weight * CalculateQuadraticApr(totalRequested);
         }
 
         private static double CalculateLinearApr(double totalRequested)
         {
-            return _linearA * totalRequested + _linearB;
+            return LinearA * totalRequested + LinearB;
         }
 
         private static double CalculateQuadraticApr(double totalRequested)
         {
-            return _quadraticC * Math.Pow(totalRequested, 2) + _quadraticD * totalRequested + _quadraticE;
+            return QuadraticC * Math.Pow(totalRequested, 2) + QuadraticD * totalRequested + QuadraticE;
         }
 
-        internal static double CalculateFlow(double apr)
+        internal static double CalculateFlow(double mwe)
         {
-            return 82.8 + (13.7 * apr) + (5.87 * Math.Pow(10, -3) * Math.Pow(apr, 2));
+            return 1.05829103 * mwe + 225.96447;
         }
     }
 }

@@ -64,7 +64,7 @@ namespace RBWR_Calculator
 
             double totalRequested = mwResult + plantUsageResult;
             double apr = Features.Calculations.CalculateApr(totalRequested);
-            double flow = Features.Calculations.CalculateFlow(apr);
+            double flow = Features.Calculations.CalculateFlow(totalRequested);
 
             textboxPowerOutputAPR.BackColor = Color.GhostWhite;
             textboxPowerOutputFlow.BackColor = Color.GhostWhite;
