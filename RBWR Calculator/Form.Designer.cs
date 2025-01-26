@@ -68,6 +68,8 @@
             this.labelRepairHint = new System.Windows.Forms.Label();
             this.labelCredit = new System.Windows.Forms.Label();
             this.labelDoubleClickEasterEgg = new System.Windows.Forms.Label();
+            this.checkboxRepairsCondenserSJAE2 = new System.Windows.Forms.CheckBox();
+            this.checkboxRepairsCondenserSJAE1 = new System.Windows.Forms.CheckBox();
             this.groupPower.SuspendLayout();
             this.groupRepair.SuspendLayout();
             this.groupRepairMarkers.SuspendLayout();
@@ -283,9 +285,9 @@
             //
             this.repairsGroupReactor.Controls.Add(this.checkboxRepairsReactorRecirc1);
             this.repairsGroupReactor.Controls.Add(this.checkboxRepairsReactorRecirc2);
-            this.repairsGroupReactor.Location = new System.Drawing.Point(148, 161);
+            this.repairsGroupReactor.Location = new System.Drawing.Point(148, 180);
             this.repairsGroupReactor.Name = "repairsGroupReactor";
-            this.repairsGroupReactor.Size = new System.Drawing.Size(121, 88);
+            this.repairsGroupReactor.Size = new System.Drawing.Size(121, 69);
             this.repairsGroupReactor.TabIndex = 3;
             this.repairsGroupReactor.TabStop = false;
             this.repairsGroupReactor.Text = "Reactor";
@@ -310,11 +312,13 @@
             //
             // repairsGroupCondenser
             //
+            this.repairsGroupCondenser.Controls.Add(this.checkboxRepairsCondenserSJAE2);
+            this.repairsGroupCondenser.Controls.Add(this.checkboxRepairsCondenserSJAE1);
             this.repairsGroupCondenser.Controls.Add(this.checkboxRepairsCondenserRecirc2);
             this.repairsGroupCondenser.Controls.Add(this.checkboxRepairsCondenserRecirc1);
             this.repairsGroupCondenser.Location = new System.Drawing.Point(148, 77);
             this.repairsGroupCondenser.Name = "repairsGroupCondenser";
-            this.repairsGroupCondenser.Size = new System.Drawing.Size(121, 84);
+            this.repairsGroupCondenser.Size = new System.Drawing.Size(121, 104);
             this.repairsGroupCondenser.TabIndex = 3;
             this.repairsGroupCondenser.TabStop = false;
             this.repairsGroupCondenser.Text = "Condenser";
@@ -355,7 +359,7 @@
             //
             // checkboxRepairsMCCCond2
             //
-            this.checkboxRepairsMCCCond2.Location = new System.Drawing.Point(6, 96);
+            this.checkboxRepairsMCCCond2.Location = new System.Drawing.Point(6, 93);
             this.checkboxRepairsMCCCond2.Name = "checkboxRepairsMCCCond2";
             this.checkboxRepairsMCCCond2.Size = new System.Drawing.Size(96, 20);
             this.checkboxRepairsMCCCond2.TabIndex = 18;
@@ -400,7 +404,7 @@
             //
             // checkboxRepairsMCCCond1
             //
-            this.checkboxRepairsMCCCond1.Location = new System.Drawing.Point(6, 79);
+            this.checkboxRepairsMCCCond1.Location = new System.Drawing.Point(6, 76);
             this.checkboxRepairsMCCCond1.Name = "checkboxRepairsMCCCond1";
             this.checkboxRepairsMCCCond1.Size = new System.Drawing.Size(96, 20);
             this.checkboxRepairsMCCCond1.TabIndex = 17;
@@ -440,6 +444,24 @@
             this.labelDoubleClickEasterEgg.TabIndex = 3;
             this.labelDoubleClickEasterEgg.Text = "You are not a good person. You know this, right?";
             //
+            // checkboxRepairsCondenserSJAE2
+            //
+            this.checkboxRepairsCondenserSJAE2.Location = new System.Drawing.Point(6, 78);
+            this.checkboxRepairsCondenserSJAE2.Name = "checkboxRepairsCondenserSJAE2";
+            this.checkboxRepairsCondenserSJAE2.Size = new System.Drawing.Size(104, 24);
+            this.checkboxRepairsCondenserSJAE2.TabIndex = 3;
+            this.checkboxRepairsCondenserSJAE2.Text = "SJAE 2";
+            this.checkboxRepairsCondenserSJAE2.UseVisualStyleBackColor = true;
+            //
+            // checkboxRepairsCondenserSJAE1
+            //
+            this.checkboxRepairsCondenserSJAE1.Location = new System.Drawing.Point(6, 59);
+            this.checkboxRepairsCondenserSJAE1.Name = "checkboxRepairsCondenserSJAE1";
+            this.checkboxRepairsCondenserSJAE1.Size = new System.Drawing.Size(104, 24);
+            this.checkboxRepairsCondenserSJAE1.TabIndex = 2;
+            this.checkboxRepairsCondenserSJAE1.Text = "SJAE 1";
+            this.checkboxRepairsCondenserSJAE1.UseVisualStyleBackColor = true;
+            //
             // Form
             //
             this.ClientSize = new System.Drawing.Size(843, 291);
@@ -462,6 +484,9 @@
             this.repairsGroupMCC.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.CheckBox checkboxRepairsCondenserSJAE2;
+        private System.Windows.Forms.CheckBox checkboxRepairsCondenserSJAE1;
 
         private System.Windows.Forms.Label labelCredit;
         private System.Windows.Forms.Label labelDoubleClickEasterEgg;
