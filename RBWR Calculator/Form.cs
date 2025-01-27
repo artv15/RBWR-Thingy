@@ -19,7 +19,7 @@ namespace RBWR_Calculator
 
         private bool _suppressUpdates;
 
-        private void ForceRecalculationAPRUpdated(object sender, EventArgs e)
+        private void ForceRecalculationAprUpdated(object sender, EventArgs e)
         {
             if (_suppressUpdates)
                 return;
@@ -237,7 +237,61 @@ namespace RBWR_Calculator
 
         private void Loaded(object sender, EventArgs e)
         {
-            // do nothing
+            var tooltip = new ToolTip();
+
+            tooltip.AutoPopDelay = 5000;
+            tooltip.InitialDelay = 1000;
+            tooltip.ReshowDelay = 500;
+
+            tooltip.ShowAlways = true;
+
+            tooltip.SetToolTip(textboxPowerInputDemand, "Unit demand in MWe. Sums with unit usage to get target gen load.");
+            tooltip.SetToolTip(textboxPowerInputPlantUsage, "Unit usage in MWe. Sums with unit demand to get target gen load.");
+            tooltip.SetToolTip(textboxPowerOutputAPR, "Target Reactor APR. Can be adjusted, will display resulting gen load in demand input.");
+            tooltip.SetToolTip(textboxPowerOutputFlow, "Expected reactor steam flow. Automatically replicated to MCC Repair Assist flow input upon update.");
+            tooltip.SetToolTip(textboxInputRepairFlow, "Reactor outflow. Highly recommend to increase it by 10 kg/s.");
+            tooltip.SetToolTip(textboxInputRepairTime, "Expected repair time. Less devices you mark for repairs, less time it will take. Highly suggest leaving it at a default value.");
+            tooltip.SetToolTip(textboxRepairInputSoloPump, "Best pump output capacity of both sets.");
+
+            string phToolTip =
+                "Increases reactor efficiency by preheating incoming feedwater. " +
+                "If any one of them is broken, demand calculator will produce incorrect values. " +
+                "To check, switch them off, then check them one by one to see if the feedwater temperature matches. " +
+                "If it does not, lower than maximum pre-heaters are broken.";
+            string fwpToolTip =
+                "Transfers water from the deaerator back to the reactor, closing the coolant loop. " +
+                "1% of FWP is 10 kg/s of flow. If it doesn't match up with actual outflow, a pump is broken. " +
+                "Easier to detect in unit 2.";
+            string condPumpToolTip =
+                "Transfers water from the hotwell (condenser) to the deaerator. A single pump has nominal output of 1000 kg/s. " +
+                "If a single pump is maxed out and has less outflow than 1000 kg/s, it's broken. Easier to test in unit 1.";
+            string condRecircToolTip =
+                "Increases condenser vacuum by condensing steam back into water, leaving nothing, or vacuum, behind. " +
+                "A single pump has 2500 kg/s recirculation capacity. If a maxed out pump outputs less water, it's broken. Easier to test in unit 1.";
+            string condSjaeToolTip =
+                "Ejects non-condensable gases. Can be used to lower the pressure in a pinch. Enable only one at a time (to use in emergencies), quickly switch them to test. " +
+                "If recently enabled SJAE removes less gases (pressure goes up), it's (more) broken than another SJAE.";
+            string reactorRecircToolTip =
+                "Increases reactivity by removing steam voids. Has an opposite effect on RBMK. 1% = 5 kg/s, if outflow doesn't match the percentage, recirculation pump is broken.";
+
+            tooltip.SetToolTip(checkboxRepairsPH1, phToolTip);
+            tooltip.SetToolTip(checkboxRepairsPH2, phToolTip);
+            tooltip.SetToolTip(checkboxRepairsPH3, phToolTip);
+
+            tooltip.SetToolTip(checkboxRepairsFWP1, fwpToolTip);
+            tooltip.SetToolTip(checkboxRepairsFWP2, fwpToolTip);
+
+            tooltip.SetToolTip(checkboxRepairsMCCCond1, condPumpToolTip);
+            tooltip.SetToolTip(checkboxRepairsMCCCond2, condPumpToolTip);
+
+            tooltip.SetToolTip(checkboxRepairsCondenserRecirc1, condRecircToolTip);
+            tooltip.SetToolTip(checkboxRepairsCondenserRecirc2, condRecircToolTip);
+
+            tooltip.SetToolTip(checkboxRepairsCondenserSJAE1, condSjaeToolTip);
+            tooltip.SetToolTip(checkboxRepairsCondenserSJAE2, condSjaeToolTip);
+
+            tooltip.SetToolTip(checkboxRepairsReactorRecirc1, reactorRecircToolTip);
+            tooltip.SetToolTip(checkboxRepairsReactorRecirc2, reactorRecircToolTip);
         }
     }
 }

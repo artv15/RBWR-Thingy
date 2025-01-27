@@ -172,7 +172,7 @@
             this.textboxPowerOutputAPR.Name = "textboxPowerOutputAPR";
             this.textboxPowerOutputAPR.Size = new System.Drawing.Size(133, 20);
             this.textboxPowerOutputAPR.TabIndex = 1;
-            this.textboxPowerOutputAPR.TextChanged += new System.EventHandler(this.ForceRecalculationAPRUpdated);
+            this.textboxPowerOutputAPR.TextChanged += new System.EventHandler(this.ForceRecalculationAprUpdated);
             //
             // textboxPowerInputDemand
             //
