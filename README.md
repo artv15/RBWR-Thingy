@@ -35,4 +35,4 @@ You need .Net Framework v4.8.1 to compile it.
 ## Extra
 Feel free to give suggestions or report any bugs via [issues](https://github.com/artv15/RBWR-Thingy/issues).
 > [!CAUTION]
-> i'm not responsible if I get your reactor explodet, sowwy
+> i'm not responsible if I get your reactor explodet, sowwy :3
