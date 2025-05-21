@@ -53,7 +53,7 @@ namespace RBWR_Calculator
                 textboxPowerInputDemand.Text = projectedLoad.ToString("0.00");
                 textboxPowerOutputAPR.BackColor = SystemColors.Window;
                 _suppressUpdates = false;
-                ForceRecalculationFlow();
+                ForceRecalculationExtra();
             }
             finally
             {
@@ -145,7 +145,7 @@ namespace RBWR_Calculator
                     return;
                 }
 
-                ForceRecalculationFlow();
+                ForceRecalculationExtra();
             }
             finally
             {
@@ -153,7 +153,7 @@ namespace RBWR_Calculator
             }
         }
 
-        private void ForceRecalculationFlow(object sender = null, EventArgs e = null)
+        private void ForceRecalculationExtra(object sender = null, EventArgs e = null)
         {
             bool fla = !double.TryParse(textboxPowerInputDemand.Text, out var mwResult);
             bool flb = !double.TryParse(textboxPowerInputPlantUsage.Text, out var plantUsageResult);
@@ -166,6 +166,15 @@ namespace RBWR_Calculator
             double flow = Calculations.CalculateFlow(totalRequested);
             textboxPowerOutputFlow.Text = $@"{flow:0.00}";
             textboxInputRepairFlow.Text = $@"{flow:0.00}";
+
+            double turbineValve = Calculations.CalculateTurbineValve(totalRequested);
+            textBoxOutputTurbineInletValve.Text = $@"{turbineValve:0.00}";
+            double condenserFlowU1 = Calculations.CalculateCondenserFlowU1(totalRequested);
+            textBoxOutputCondenserFlowU1.Text = $@"{condenserFlowU1:0.00}";
+            double steamSealingU2 = Calculations.CalculateSealingU2(totalRequested);
+            textBoxOutputSteamSealingU2.Text = $@"{steamSealingU2:0.00}";
+            double oilCoolingU2 = Calculations.CalculateCoolingU2(totalRequested);
+            textBoxOutputOilCoolingU2.Text = $@"{oilCoolingU2:0.00}";
         }
 
         private void ForceRecalculationColdRun(object sender = null, EventArgs e = null)

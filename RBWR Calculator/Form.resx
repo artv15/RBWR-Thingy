@@ -120,4 +120,9 @@
   <data name="labelRepairDescription.Text" xml:space="preserve">
     <value>Checks whether you could increase reactor water level to 4.5m and get one of the MCC pumps repaired. Keep in mind, steam flow will increase by about 10 kg/s, so I suggest increasing outflow by 10. On average, repairs take about 200 seconds to complete, but I recommend using the default value.</value>
   </data>
+  <data name="labelAuxInformation.Text" xml:space="preserve">
+    <value>This panel can be used to check some useful parameters for operating a unit solo.
+Keep in mind that Condenser Flow applies only to U1 - for U2 just cheese the condenser.
+Formulas for U2 are NOT perfect due to analog gauges. Same assumptions from MWe to APR panel apply.</value>
+  </data>
 </root>

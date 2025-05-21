@@ -56,5 +56,25 @@ namespace RBWR_Calculator.Features
         {
             return 1.05829103 * mwe + 225.96447;
         }
+
+        internal static double CalculateTurbineValve(double mwe)
+        {
+            return -0.0000079063 * Math.Pow(mwe, 2) + 0.068857 * mwe + 15.4958;
+        }
+
+        internal static double CalculateCondenserFlowU1(double mwe)
+        {
+            return -0.0001816074 * Math.Pow(mwe, 2) + 3.109592 * mwe + 724.8318;
+        }
+
+        internal static double CalculateCoolingU2(double mwe)
+        {
+            return 0.0000023700 * Math.Pow(mwe, 2) + 0.080997 * mwe + -16.2942;
+        }
+
+        internal static double CalculateSealingU2(double mwe)
+        {
+            return -0.0000411878 * Math.Pow(mwe, 2) + 0.131859 * mwe + -29.2782;
+        }
     }
 }

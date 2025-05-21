@@ -55,6 +55,8 @@
             this.checkboxRepairsReactorRecirc1 = new System.Windows.Forms.CheckBox();
             this.checkboxRepairsReactorRecirc2 = new System.Windows.Forms.CheckBox();
             this.repairsGroupCondenser = new System.Windows.Forms.GroupBox();
+            this.checkboxRepairsCondenserSJAE2 = new System.Windows.Forms.CheckBox();
+            this.checkboxRepairsCondenserSJAE1 = new System.Windows.Forms.CheckBox();
             this.checkboxRepairsCondenserRecirc2 = new System.Windows.Forms.CheckBox();
             this.checkboxRepairsCondenserRecirc1 = new System.Windows.Forms.CheckBox();
             this.repairsGroupMCC = new System.Windows.Forms.GroupBox();
@@ -68,14 +70,23 @@
             this.labelRepairHint = new System.Windows.Forms.Label();
             this.labelCredit = new System.Windows.Forms.Label();
             this.labelDoubleClickEasterEgg = new System.Windows.Forms.Label();
-            this.checkboxRepairsCondenserSJAE2 = new System.Windows.Forms.CheckBox();
-            this.checkboxRepairsCondenserSJAE1 = new System.Windows.Forms.CheckBox();
+            this.groupAuxInfo = new System.Windows.Forms.GroupBox();
+            this.textBoxOutputOilCoolingU2 = new System.Windows.Forms.TextBox();
+            this.textBoxOutputSteamSealingU2 = new System.Windows.Forms.TextBox();
+            this.textBoxOutputCondenserFlowU1 = new System.Windows.Forms.TextBox();
+            this.textBoxOutputTurbineInletValve = new System.Windows.Forms.TextBox();
+            this.labelAuxCoolingU2 = new System.Windows.Forms.Label();
+            this.labelAuxSealingU2 = new System.Windows.Forms.Label();
+            this.labelAuxCondenserFlowU1 = new System.Windows.Forms.Label();
+            this.labelAuxTurbineValve = new System.Windows.Forms.Label();
+            this.labelAuxInformation = new System.Windows.Forms.Label();
             this.groupPower.SuspendLayout();
             this.groupRepair.SuspendLayout();
             this.groupRepairMarkers.SuspendLayout();
             this.repairsGroupReactor.SuspendLayout();
             this.repairsGroupCondenser.SuspendLayout();
             this.repairsGroupMCC.SuspendLayout();
+            this.groupAuxInfo.SuspendLayout();
             this.SuspendLayout();
             //
             // groupPower
@@ -192,7 +203,7 @@
             this.groupRepair.Controls.Add(this.labelCRPumpCapacity);
             this.groupRepair.Controls.Add(this.labelCROutflow);
             this.groupRepair.Controls.Add(this.labelRepairDescription);
-            this.groupRepair.Location = new System.Drawing.Point(278, 12);
+            this.groupRepair.Location = new System.Drawing.Point(518, 12);
             this.groupRepair.Name = "groupRepair";
             this.groupRepair.Size = new System.Drawing.Size(275, 255);
             this.groupRepair.TabIndex = 1;
@@ -274,7 +285,7 @@
             this.groupRepairMarkers.Controls.Add(this.repairsGroupCondenser);
             this.groupRepairMarkers.Controls.Add(this.repairsGroupMCC);
             this.groupRepairMarkers.Controls.Add(this.labelRepairHint);
-            this.groupRepairMarkers.Location = new System.Drawing.Point(559, 12);
+            this.groupRepairMarkers.Location = new System.Drawing.Point(799, 12);
             this.groupRepairMarkers.Name = "groupRepairMarkers";
             this.groupRepairMarkers.Size = new System.Drawing.Size(275, 255);
             this.groupRepairMarkers.TabIndex = 2;
@@ -322,6 +333,24 @@
             this.repairsGroupCondenser.TabIndex = 3;
             this.repairsGroupCondenser.TabStop = false;
             this.repairsGroupCondenser.Text = "Condenser";
+            //
+            // checkboxRepairsCondenserSJAE2
+            //
+            this.checkboxRepairsCondenserSJAE2.Location = new System.Drawing.Point(6, 78);
+            this.checkboxRepairsCondenserSJAE2.Name = "checkboxRepairsCondenserSJAE2";
+            this.checkboxRepairsCondenserSJAE2.Size = new System.Drawing.Size(104, 24);
+            this.checkboxRepairsCondenserSJAE2.TabIndex = 3;
+            this.checkboxRepairsCondenserSJAE2.Text = "SJAE 2";
+            this.checkboxRepairsCondenserSJAE2.UseVisualStyleBackColor = true;
+            //
+            // checkboxRepairsCondenserSJAE1
+            //
+            this.checkboxRepairsCondenserSJAE1.Location = new System.Drawing.Point(6, 59);
+            this.checkboxRepairsCondenserSJAE1.Name = "checkboxRepairsCondenserSJAE1";
+            this.checkboxRepairsCondenserSJAE1.Size = new System.Drawing.Size(104, 24);
+            this.checkboxRepairsCondenserSJAE1.TabIndex = 2;
+            this.checkboxRepairsCondenserSJAE1.Text = "SJAE 1";
+            this.checkboxRepairsCondenserSJAE1.UseVisualStyleBackColor = true;
             //
             // checkboxRepairsCondenserRecirc2
             //
@@ -444,27 +473,104 @@
             this.labelDoubleClickEasterEgg.TabIndex = 3;
             this.labelDoubleClickEasterEgg.Text = "You are not a good person. You know this, right?";
             //
-            // checkboxRepairsCondenserSJAE2
+            // groupAuxInfo
             //
-            this.checkboxRepairsCondenserSJAE2.Location = new System.Drawing.Point(6, 78);
-            this.checkboxRepairsCondenserSJAE2.Name = "checkboxRepairsCondenserSJAE2";
-            this.checkboxRepairsCondenserSJAE2.Size = new System.Drawing.Size(104, 24);
-            this.checkboxRepairsCondenserSJAE2.TabIndex = 3;
-            this.checkboxRepairsCondenserSJAE2.Text = "SJAE 2";
-            this.checkboxRepairsCondenserSJAE2.UseVisualStyleBackColor = true;
+            this.groupAuxInfo.Controls.Add(this.textBoxOutputOilCoolingU2);
+            this.groupAuxInfo.Controls.Add(this.textBoxOutputSteamSealingU2);
+            this.groupAuxInfo.Controls.Add(this.textBoxOutputCondenserFlowU1);
+            this.groupAuxInfo.Controls.Add(this.textBoxOutputTurbineInletValve);
+            this.groupAuxInfo.Controls.Add(this.labelAuxCoolingU2);
+            this.groupAuxInfo.Controls.Add(this.labelAuxSealingU2);
+            this.groupAuxInfo.Controls.Add(this.labelAuxCondenserFlowU1);
+            this.groupAuxInfo.Controls.Add(this.labelAuxTurbineValve);
+            this.groupAuxInfo.Controls.Add(this.labelAuxInformation);
+            this.groupAuxInfo.Location = new System.Drawing.Point(278, 12);
+            this.groupAuxInfo.Name = "groupAuxInfo";
+            this.groupAuxInfo.Size = new System.Drawing.Size(234, 254);
+            this.groupAuxInfo.TabIndex = 4;
+            this.groupAuxInfo.TabStop = false;
+            this.groupAuxInfo.Text = "Auxilary Information";
             //
-            // checkboxRepairsCondenserSJAE1
+            // textBoxOutputOilCoolingU2
             //
-            this.checkboxRepairsCondenserSJAE1.Location = new System.Drawing.Point(6, 59);
-            this.checkboxRepairsCondenserSJAE1.Name = "checkboxRepairsCondenserSJAE1";
-            this.checkboxRepairsCondenserSJAE1.Size = new System.Drawing.Size(104, 24);
-            this.checkboxRepairsCondenserSJAE1.TabIndex = 2;
-            this.checkboxRepairsCondenserSJAE1.Text = "SJAE 1";
-            this.checkboxRepairsCondenserSJAE1.UseVisualStyleBackColor = true;
+            this.textBoxOutputOilCoolingU2.Location = new System.Drawing.Point(122, 200);
+            this.textBoxOutputOilCoolingU2.Name = "textBoxOutputOilCoolingU2";
+            this.textBoxOutputOilCoolingU2.ReadOnly = true;
+            this.textBoxOutputOilCoolingU2.Size = new System.Drawing.Size(106, 20);
+            this.textBoxOutputOilCoolingU2.TabIndex = 8;
+            //
+            // textBoxOutputSteamSealingU2
+            //
+            this.textBoxOutputSteamSealingU2.Location = new System.Drawing.Point(122, 177);
+            this.textBoxOutputSteamSealingU2.Name = "textBoxOutputSteamSealingU2";
+            this.textBoxOutputSteamSealingU2.ReadOnly = true;
+            this.textBoxOutputSteamSealingU2.Size = new System.Drawing.Size(106, 20);
+            this.textBoxOutputSteamSealingU2.TabIndex = 7;
+            //
+            // textBoxOutputCondenserFlowU1
+            //
+            this.textBoxOutputCondenserFlowU1.Location = new System.Drawing.Point(122, 154);
+            this.textBoxOutputCondenserFlowU1.Name = "textBoxOutputCondenserFlowU1";
+            this.textBoxOutputCondenserFlowU1.ReadOnly = true;
+            this.textBoxOutputCondenserFlowU1.Size = new System.Drawing.Size(106, 20);
+            this.textBoxOutputCondenserFlowU1.TabIndex = 6;
+            //
+            // textBoxOutputTurbineInletValve
+            //
+            this.textBoxOutputTurbineInletValve.Location = new System.Drawing.Point(122, 129);
+            this.textBoxOutputTurbineInletValve.Name = "textBoxOutputTurbineInletValve";
+            this.textBoxOutputTurbineInletValve.ReadOnly = true;
+            this.textBoxOutputTurbineInletValve.Size = new System.Drawing.Size(106, 20);
+            this.textBoxOutputTurbineInletValve.TabIndex = 5;
+            //
+            // labelAuxCoolingU2
+            //
+            this.labelAuxCoolingU2.Location = new System.Drawing.Point(6, 198);
+            this.labelAuxCoolingU2.Name = "labelAuxCoolingU2";
+            this.labelAuxCoolingU2.Size = new System.Drawing.Size(110, 23);
+            this.labelAuxCoolingU2.TabIndex = 4;
+            this.labelAuxCoolingU2.Text = "Oil Cooling (U2)";
+            this.labelAuxCoolingU2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //
+            // labelAuxSealingU2
+            //
+            this.labelAuxSealingU2.Location = new System.Drawing.Point(6, 175);
+            this.labelAuxSealingU2.Name = "labelAuxSealingU2";
+            this.labelAuxSealingU2.Size = new System.Drawing.Size(110, 23);
+            this.labelAuxSealingU2.TabIndex = 3;
+            this.labelAuxSealingU2.Text = "Steam Sealing (U2)";
+            this.labelAuxSealingU2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //
+            // labelAuxCondenserFlowU1
+            //
+            this.labelAuxCondenserFlowU1.Location = new System.Drawing.Point(6, 152);
+            this.labelAuxCondenserFlowU1.Name = "labelAuxCondenserFlowU1";
+            this.labelAuxCondenserFlowU1.Size = new System.Drawing.Size(110, 23);
+            this.labelAuxCondenserFlowU1.TabIndex = 2;
+            this.labelAuxCondenserFlowU1.Text = "Condenser Flow (U1)";
+            this.labelAuxCondenserFlowU1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //
+            // labelAuxTurbineValve
+            //
+            this.labelAuxTurbineValve.Location = new System.Drawing.Point(6, 129);
+            this.labelAuxTurbineValve.Name = "labelAuxTurbineValve";
+            this.labelAuxTurbineValve.Size = new System.Drawing.Size(110, 23);
+            this.labelAuxTurbineValve.TabIndex = 1;
+            this.labelAuxTurbineValve.Text = "Turbine Inlet Valve";
+            this.labelAuxTurbineValve.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //
+            // labelAuxInformation
+            //
+            this.labelAuxInformation.Location = new System.Drawing.Point(6, 16);
+            this.labelAuxInformation.Name = "labelAuxInformation";
+            this.labelAuxInformation.Size = new System.Drawing.Size(222, 108);
+            this.labelAuxInformation.TabIndex = 0;
+            this.labelAuxInformation.Text = resources.GetString("labelAuxInformation.Text");
             //
             // Form
             //
-            this.ClientSize = new System.Drawing.Size(843, 291);
+            this.ClientSize = new System.Drawing.Size(1086, 291);
+            this.Controls.Add(this.groupAuxInfo);
             this.Controls.Add(this.labelCredit);
             this.Controls.Add(this.labelDoubleClickEasterEgg);
             this.Controls.Add(this.groupRepairMarkers);
@@ -482,8 +588,28 @@
             this.repairsGroupReactor.ResumeLayout(false);
             this.repairsGroupCondenser.ResumeLayout(false);
             this.repairsGroupMCC.ResumeLayout(false);
+            this.groupAuxInfo.ResumeLayout(false);
+            this.groupAuxInfo.PerformLayout();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.TextBox textBoxOutputOilCoolingU2;
+
+        private System.Windows.Forms.TextBox textBoxOutputSteamSealingU2;
+
+        private System.Windows.Forms.TextBox textBoxOutputCondenserFlowU1;
+
+        private System.Windows.Forms.TextBox textBoxOutputTurbineInletValve;
+
+        private System.Windows.Forms.Label labelAuxSealingU2;
+        private System.Windows.Forms.Label labelAuxCoolingU2;
+
+        private System.Windows.Forms.Label labelAuxCondenserFlowU1;
+
+        private System.Windows.Forms.Label labelAuxTurbineValve;
+
+        private System.Windows.Forms.GroupBox groupAuxInfo;
+        private System.Windows.Forms.Label labelAuxInformation;
 
         private System.Windows.Forms.CheckBox checkboxRepairsCondenserSJAE2;
         private System.Windows.Forms.CheckBox checkboxRepairsCondenserSJAE1;
