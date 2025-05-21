@@ -16,6 +16,12 @@ Can convert MWe demand and plant usage to a more or less approximate APR target.
 
 Will also show an approximate feedwater flow, which should be treated as a **rough approximation** (±30 kg/s).
 Useful when you are making rapid adjustments and want to just forget about MCC.
+
+### Auxilary stats
+Approx turbine inlet, condenser flow (for u1), steam sealing (for u2) and oil cooling (for u2) are also calculated.\
+To cheese condenser in unit 2, set recirculation to 100%, one SJAE to 100%, Sniffer valve to 60% and then adjust sniffer as needed.\
+*Trust me, you better cheese the condenser in unit 2 and not run it normally.*
+
 ### Pump repairs on high outflow
 Allows to calculate whether you can run without a pump without changing your load.\
 Pretty precise I would say, at least it worked for unit 1 when I was testing it on a private server.\
