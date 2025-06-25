@@ -6,7 +6,7 @@ A multitool for [Realistic Boiling Water Reactor Simulator](https://www.roblox.c
 Can convert MWe demand and plant usage to a more or less approximate APR target.
 
 > [!WARNING]
-> MWe to APR formula is now no longer matching up (as of 1.7.X)\
+> MWe to APR formula is now no longer matching up for unit 2 (as of 1.7.X)\
 > Actual APR needed is now HIGHER than the calculator displays, it seems that there was a minor change in u2's APR to steam flow change or something along those lines.\
 > I will get to fixing it at some point (preferably once I'll stop 'Eat Sleep Deepwoken Repeat' trend of mine), preferably using turbine flow as an X in most formulas instead of generator load.\
 > *Be patient in the meanwhile pwease.*
