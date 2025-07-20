@@ -6,9 +6,9 @@ A multitool for [Realistic Boiling Water Reactor Simulator](https://www.roblox.c
 Can convert MWe demand and plant usage to a more or less approximate APR target.
 
 > [!NOTE]
-> MWe to APR formula for Unit 2 may not be entirely accurate.
-> It comes to multiple factors, mostly being new LRPM system and the fact that Unit 2 has analog gauges, thus autocontrol could not have been used to sustain certain APR value for data collection.
-> If you are to use this new formula - keep in mind that it is totally not 100% accurate and may be off by ±0.5% (or even more).
+> MWe to APR formula for Unit 2 may not be entirely accurate.\
+> It comes to multiple factors, mostly being new LRPM system and the fact that Unit 2 has analog gauges, thus autocontrol could not have been used to sustain certain APR value for data collection.\
+> If you are to use this new formula - keep in mind that it is totally not 100% accurate and may be off by ±0.5% (or even more).\
 > I **DID NOT** check if turbine valve/feedwater flow still match up, but as far as I am aware, they do.
 
 > [!NOTE]
