@@ -6,28 +6,40 @@ namespace RBWR_Calculator.Features
 {
     public class Calculations
     {
-        private const double QuadraticC = -0.000002121531845;
-        private const double QuadraticD = 0.07616;
-        private const double QuadraticE = 10.36918;
+        private const double QuadraticCUnit1 = -0.000002121531845;
+        private const double QuadraticDUnit1 = 0.07616;
+        private const double QuadraticEUnit1 = 10.36918;
 
-        internal static double CalculateApr(double totalRequested)
+        private const double QuadraticCUnit2 = 0.0000062606;
+        private const double QuadraticDUnit2 = 0.068219;
+        private const double QuadraticEUnit2 = 13.9919;
+
+        internal static double CalculateApr(double totalRequested, bool isUnit1 = true)
         {
-            return CalculateQuadraticApr(totalRequested);
+            if (isUnit1)
+                return CalculateQuadraticAprUnit1(totalRequested);
+            else
+                return CalculateQuadraticAprUnit2(totalRequested);
         }
 
-        private static double CalculateQuadraticApr(double totalRequested)
+        private static double CalculateQuadraticAprUnit2(double totalRequested)
         {
-            return QuadraticC * Math.Pow(totalRequested, 2) + QuadraticD * totalRequested + QuadraticE;
+            return QuadraticCUnit2 * Math.Pow(totalRequested, 2) + QuadraticDUnit2 * totalRequested + QuadraticEUnit2;
+        }
+
+        private static double CalculateQuadraticAprUnit1(double totalRequested)
+        {
+            return QuadraticCUnit1 * Math.Pow(totalRequested, 2) + QuadraticDUnit1 * totalRequested + QuadraticEUnit1;
         }
 
         public static double CalculateMWeFromApr(double apr)
         {
-            if (apr <= QuadraticE)
+            if (apr <= QuadraticEUnit1)
                 return 0;
 
-            double a = QuadraticC;
-            double b = QuadraticD;
-            double c = QuadraticE - apr;
+            double a = QuadraticCUnit1;
+            double b = QuadraticDUnit1;
+            double c = QuadraticEUnit1 - apr;
 
             double discriminant = b * b - 4 * a * c;
 

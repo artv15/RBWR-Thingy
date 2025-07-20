@@ -5,14 +5,14 @@ A multitool for [Realistic Boiling Water Reactor Simulator](https://www.roblox.c
 ### MWe to APR conversion
 Can convert MWe demand and plant usage to a more or less approximate APR target.
 
-> [!WARNING]
-> MWe to APR formula is now no longer matching up for unit 2 (as of 1.7.X)\
-> Actual APR needed is now HIGHER than the calculator displays, it seems that there was a minor change in u2's APR to steam flow change or something along those lines.\
-> I will get to fixing it at some point (preferably once I'll stop 'Eat Sleep Deepwoken Repeat' trend of mine), preferably using turbine flow as an X in most formulas instead of generator load.\
-> *Be patient in the meanwhile pwease.*
+> [!NOTE]
+> MWe to APR formula for Unit 2 may not be entirely accurate.
+> It comes to multiple factors, mostly being new LRPM system and the fact that Unit 2 has analog gauges, thus autocontrol could not have been used to sustain certain APR value for data collection.
+> If you are to use this new formula - keep in mind that it is totally not 100% accurate and may be off by ±0.5% (or even more).
+> I **DID NOT** check if turbine valve/feedwater flow still match up, but as far as I am aware, they do.
 
 > [!NOTE]
-> Keep in mind that MWe to APR conversion is not 100% perfect, and there are a couple reasons why the resulting APR may be wrong:
+> Keep in mind that MWe to APR conversion is not 100% perfect, and there are a couple of reasons why the resulting APR may be wrong:
 > - Steam Pressure is not at 7.1 MPa
 > - At leat one preheater is broken/disabled (using this calculator is a way to check them btw)
 > - You have not updated plant usage
@@ -42,7 +42,7 @@ Useful if you get disconnected from the game from time to time, or just don't li
 
 ## Downloads
 Check releases for precompiled app or build it yourself from source.\
-You need .Net Framework v4.8.1 to compile it.
+You will need .Net Framework v4.8.1 to compile it.
 
 ## Extra
 Feel free to give suggestions or report any bugs via [issues](https://github.com/artv15/RBWR-Thingy/issues).

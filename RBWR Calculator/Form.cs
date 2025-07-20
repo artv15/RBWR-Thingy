@@ -91,7 +91,7 @@ namespace RBWR_Calculator
                 }
 
                 double totalRequested = mwResult + plantUsageResult;
-                double apr = Calculations.CalculateApr(totalRequested);
+                double apr = Calculations.CalculateApr(totalRequested, !checkBoxAPRIsUnit2.Checked);
                 double flow = Calculations.CalculateFlow(totalRequested);
 
                 textboxPowerOutputAPR.BackColor = SystemColors.Window;
@@ -261,6 +261,7 @@ namespace RBWR_Calculator
             tooltip.SetToolTip(textboxInputRepairFlow, "Reactor outflow. Highly recommend to increase it by 10 kg/s.");
             tooltip.SetToolTip(textboxInputRepairTime, "Expected repair time. Less devices you mark for repairs, less time it will take. Highly suggest leaving it at a default value.");
             tooltip.SetToolTip(textboxRepairInputSoloPump, "Best pump output capacity of both sets.");
+            tooltip.SetToolTip(checkBoxAPRIsUnit2, "Use Unit 2 formula for APR calculations.");
 
             string phToolTip =
                 "Increases reactor efficiency by preheating incoming feedwater. " +

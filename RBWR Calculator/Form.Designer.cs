@@ -31,6 +31,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             this.groupPower = new System.Windows.Forms.GroupBox();
+            this.checkBoxAPRIsUnit2 = new System.Windows.Forms.CheckBox();
             this.labelPowerExtraText = new System.Windows.Forms.Label();
             this.textboxPowerOutputFlow = new System.Windows.Forms.TextBox();
             this.labelFWFlow = new System.Windows.Forms.Label();
@@ -91,6 +92,7 @@
             //
             // groupPower
             //
+            this.groupPower.Controls.Add(this.checkBoxAPRIsUnit2);
             this.groupPower.Controls.Add(this.labelPowerExtraText);
             this.groupPower.Controls.Add(this.textboxPowerOutputFlow);
             this.groupPower.Controls.Add(this.labelFWFlow);
@@ -108,11 +110,22 @@
             this.groupPower.TabStop = false;
             this.groupPower.Text = "MWe to APR";
             //
+            // checkBoxAPRIsUnit2
+            //
+            this.checkBoxAPRIsUnit2.Location = new System.Drawing.Point(6, 179);
+            this.checkBoxAPRIsUnit2.Name = "checkBoxAPRIsUnit2";
+            this.checkBoxAPRIsUnit2.Size = new System.Drawing.Size(215, 24);
+            this.checkBoxAPRIsUnit2.TabIndex = 10;
+            this.checkBoxAPRIsUnit2.Text = "Use Unit 2 APR formula";
+            this.checkBoxAPRIsUnit2.UseVisualStyleBackColor = true;
+            this.checkBoxAPRIsUnit2.CheckedChanged += new System.EventHandler(this.ForceRecalculationLoad);
+            this.checkBoxAPRIsUnit2.CheckStateChanged += new System.EventHandler(this.ForceRecalculationLoad);
+            //
             // labelPowerExtraText
             //
-            this.labelPowerExtraText.Location = new System.Drawing.Point(6, 180);
+            this.labelPowerExtraText.Location = new System.Drawing.Point(6, 198);
             this.labelPowerExtraText.Name = "labelPowerExtraText";
-            this.labelPowerExtraText.Size = new System.Drawing.Size(239, 66);
+            this.labelPowerExtraText.Size = new System.Drawing.Size(239, 48);
             this.labelPowerExtraText.TabIndex = 9;
             this.labelPowerExtraText.Text = "No calculations performed.";
             this.labelPowerExtraText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -566,9 +579,9 @@
             this.labelAuxInformation.Size = new System.Drawing.Size(222, 108);
             this.labelAuxInformation.TabIndex = 0;
             this.labelAuxInformation.Text = resources.GetString("labelAuxInformation.Text");
-            //
+            // 
             // Form
-            //
+            // 
             this.ClientSize = new System.Drawing.Size(1086, 291);
             this.Controls.Add(this.groupAuxInfo);
             this.Controls.Add(this.labelCredit);
@@ -592,6 +605,8 @@
             this.groupAuxInfo.PerformLayout();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.CheckBox checkBoxAPRIsUnit2;
 
         private System.Windows.Forms.TextBox textBoxOutputOilCoolingU2;
 
